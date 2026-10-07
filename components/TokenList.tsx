@@ -1,5 +1,7 @@
 "use client";
 
+import { totalFeePctForTier } from "@/lib/meteora";
+
 export interface ListedToken {
   mint: string;
   name: string;
@@ -73,6 +75,14 @@ export default function TokenList({
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-extrabold truncate text-shield-ink">
                   ${t.symbol}
+                  {t.feeTier !== undefined && (
+                    <span
+                      className="ml-1.5 text-[10px] font-bold bg-blue-50 text-shield-primary px-1.5 py-0.5 rounded-full whitespace-nowrap"
+                      title={`每笔交易收取 ${totalFeePctForTier(t.feeTier).toFixed(2)}% 手续费`}
+                    >
+                      fee {totalFeePctForTier(t.feeTier).toFixed(2)}%
+                    </span>
+                  )}
                 </div>
                 <div className="text-xs text-shield-muted truncate">
                   {t.priceSol.toFixed(6)} SOL

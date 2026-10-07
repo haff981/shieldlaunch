@@ -71,6 +71,12 @@ function buildTier(tier: number): FeeTier {
 
 export const FEE_TIERS: FeeTier[] = Array.from({ length: 10 }, (_, i) => buildTier(i));
 
+/** 发币人档位 → 交易者实际支付的总费率（%），用于卡片 fee 徽标 */
+export function totalFeePctForTier(tier: number): number {
+  const t = Math.max(0, Math.min(9, Math.round(tier)));
+  return FEE_TIERS[t].totalFeePct;
+}
+
 export function getPlatformConfig(tier: number): PublicKey {
   const addr = PLATFORM_CONFIGS_MAINNET[tier];
   if (!addr || addr === "11111111111111111111111111111111") {
