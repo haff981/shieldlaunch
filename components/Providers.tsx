@@ -1,1 +1,24 @@
-InVzZSBjbGllbnQiOwoKaW1wb3J0IHsgQ29ubmVjdGlvblByb3ZpZGVyLCBXYWxsZXRQcm92aWRlciB9IGZyb20gIkBzb2xhbmEvd2FsbGV0LWFkYXB0ZXItcmVhY3QiOwppbXBvcnQgeyBXYWxsZXRNb2RhbFByb3ZpZGVyIH0gZnJvbSAiQHNvbGFuYS93YWxsZXQtYWRhcHRlci1yZWFjdC11aSI7CmltcG9ydCB7IFBoYW50b21XYWxsZXRBZGFwdGVyLCBTb2xmbGFyZVdhbGxldEFkYXB0ZXIgfSBmcm9tICJAc29sYW5hL3dhbGxldC1hZGFwdGVyLXdhbGxldHMiOwppbXBvcnQgeyB1c2VNZW1vIH0gZnJvbSAicmVhY3QiOwppbXBvcnQgeyBNQUlOTkVUX1JQQyB9IGZyb20gIkAvbGliL2NvbnN0YW50cyI7CgppbXBvcnQgIkBzb2xhbmEvd2FsbGV0LWFkYXB0ZXItcmVhY3QtdWkvc3R5bGVzLmNzcyI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBQcm92aWRlcnMoeyBjaGlsZHJlbiB9OiB7IGNoaWxkcmVuOiBSZWFjdC5SZWFjdE5vZGUgfSkgewogIGNvbnN0IHdhbGxldHMgPSB1c2VNZW1vKAogICAgKCkgPT4gW25ldyBQaGFudG9tV2FsbGV0QWRhcHRlcigpLCBuZXcgU29sZmxhcmVXYWxsZXRBZGFwdGVyKCldLAogICAgW10KICApOwoKICByZXR1cm4gKAogICAgPENvbm5lY3Rpb25Qcm92aWRlciBlbmRwb2ludD17cHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfTUFJTk5FVF9SUEMgfHwgTUFJTk5FVF9SUEN9PgogICAgICA8V2FsbGV0UHJvdmlkZXIgd2FsbGV0cz17d2FsbGV0c30gYXV0b0Nvbm5lY3Q+CiAgICAgICAgPFdhbGxldE1vZGFsUHJvdmlkZXI+e2NoaWxkcmVufTwvV2FsbGV0TW9kYWxQcm92aWRlcj4KICAgICAgPC9XYWxsZXRQcm92aWRlcj4KICAgIDwvQ29ubmVjdGlvblByb3ZpZGVyPgogICk7Cn0K
+"use client";
+
+import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import { PhantomWalletAdapter, SolflareWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { useMemo } from "react";
+import { MAINNET_RPC } from "@/lib/constants";
+
+import "@solana/wallet-adapter-react-ui/styles.css";
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  const wallets = useMemo(
+    () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
+    []
+  );
+
+  return (
+    <ConnectionProvider endpoint={process.env.NEXT_PUBLIC_MAINNET_RPC || MAINNET_RPC}>
+      <WalletProvider wallets={wallets} autoConnect>
+        <WalletModalProvider>{children}</WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
+  );
+}
