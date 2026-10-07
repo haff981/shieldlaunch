@@ -1,1 +1,45 @@
-aW1wb3J0IExpbmsgZnJvbSAibmV4dC9saW5rIjsKaW1wb3J0IHsgV2FsbGV0TXVsdGlCdXR0b24gfSBmcm9tICJAc29sYW5hL3dhbGxldC1hZGFwdGVyLXJlYWN0LXVpIjsKCmludGVyZmFjZSBQcm9wcyB7CiAgcGFyYW1zOiBQcm9taXNlPHsgd2FsbGV0OiBzdHJpbmcgfT47Cn0KCi8qKgogKiDkuKrkurrotYTmlpnpobXvvJovcHJvZmlsZS886ZKx5YyF5Zyw5Z2APgogKiAtIOaYvuekuuivpeWcsOWdgOWPkeihjOi/h+eahOaJgOacieS7o+W4ge+8iGdvbW8g5rKh5pyJ6L+Z5qCP77yM6L+Z5pivIFNoaWVsZExhdW5jaCDnmoTlt67lvILljJbvvIkKICogLSDmlbDmja7mnaXmupDvvJpTdXBhYmFzZSB0b2tlbl9yZWdpc3Ryee+8iOWPkeW4geaXtuWGmeWFpSBtaW50IOKGkiBjcmVhdG9yIOaYoOWwhO+8iQogKiAgIOWQjue7reaOpSBIZWxpdXMgd2ViaG9vayDlgZrpk77kuIrlrp7ml7bntKLlvJUKICovCmV4cG9ydCBkZWZhdWx0IGFzeW5jIGZ1bmN0aW9uIFByb2ZpbGVQYWdlKHsgcGFyYW1zIH06IFByb3BzKSB7CiAgY29uc3QgeyB3YWxsZXQgfSA9IGF3YWl0IHBhcmFtczsKICBjb25zdCBzaG9ydCA9CiAgICB3YWxsZXQubGVuZ3RoID4gMTIgPyBgJHt3YWxsZXQuc2xpY2UoMCwgNil94oCmJHt3YWxsZXQuc2xpY2UoLTQpfWAgOiB3YWxsZXQ7CgogIHJldHVybiAoCiAgICA8bWFpbiBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiBiZy1zaGllbGQtYmciPgogICAgICA8bmF2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTYgcHktNCBib3JkZXItYiBib3JkZXItd2hpdGUvMTAiPgogICAgICAgIDxMaW5rIGhyZWY9Ii8iIGNsYXNzTmFtZT0idGV4dC0yeGwgZm9udC1ib2xkIHRleHQtc2hpZWxkLW5lb24iPgogICAgICAgICAg8J+boe+4jyBTaGllbGRMYXVuY2gKICAgICAgICA8L0xpbms+CiAgICAgICAgPFdhbGxldE11bHRpQnV0dG9uIC8+CiAgICAgIDwvbmF2PgoKICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJtYXgtdy00eGwgbXgtYXV0byBweC02IHB5LTEyIj4KICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LTN4bCBmb250LWJvbGQgbWItMSI+e3Nob3J0fTwvaDE+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlLzQwIHRleHQtc20gbWItOCI+5Liq5Lq66LWE5paZPC9wPgoKICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LXhsIGZvbnQtYm9sZCBtYi00Ij7wn6qZIOaIkeWPkeihjOeahOW4gTwvaDI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJnLXNoaWVsZC1wYW5lbCByb3VuZGVkLXhsIHAtOCB0ZXh0LWNlbnRlciB0ZXh0LXdoaXRlLzQwIj4KICAgICAgICAgIGRldm5ldCDogZTosIPkuK0g4oCUIOWPkeW4geiusOW9leWGmeWFpeWQjui/memHjOS8muaMiemSseWMheWcsOWdgOW9kumbhuaYvuekuu+8mgogICAgICAgICAg5biC5YC8IC8g5q+V5Lia54q25oCBIC8g57Sv6K6hIGNyZWF0b3IgZmVlCiAgICAgICAgPC9kaXY+CgogICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQteGwgZm9udC1ib2xkIG1iLTQgbXQtMTAiPvCfk4og5oyB5LuTPC9oMj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctc2hpZWxkLXBhbmVsIHJvdW5kZWQteGwgcC04IHRleHQtY2VudGVyIHRleHQtd2hpdGUvNDAiPgogICAgICAgICAg5o6l5YWlIEhlbGl1cyDkvZnpop3ntKLlvJXlkI7mmL7npLoKICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgogICAgPC9tYWluPgogICk7Cn0K
+import Link from "next/link";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+interface Props {
+  params: Promise<{ wallet: string }>;
+}
+
+/**
+ * 个人资料页：/profile/<钱包地址>
+ * - 显示该地址发行过的所有代币（gomo 没有这栏，这是 ShieldLaunch 的差异化）
+ * - 数据来源：Supabase token_registry（发币时写入 mint → creator 映射）
+ *   后续接 Helius webhook 做链上实时索引
+ */
+export default async function ProfilePage({ params }: Props) {
+  const { wallet } = await params;
+  const short =
+    wallet.length > 12 ? `${wallet.slice(0, 6)}…${wallet.slice(-4)}` : wallet;
+
+  return (
+    <main className="min-h-screen bg-shield-bg">
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <Link href="/" className="text-2xl font-bold text-shield-neon">
+          🛡️ ShieldLaunch
+        </Link>
+        <WalletMultiButton />
+      </nav>
+
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <h1 className="text-3xl font-bold mb-1">{short}</h1>
+        <p className="text-white/40 text-sm mb-8">个人资料</p>
+
+        <h2 className="text-xl font-bold mb-4">🪙 我发行的币</h2>
+        <div className="bg-shield-panel rounded-xl p-8 text-center text-white/40">
+          devnet 联调中 — 发币记录写入后这里会按钱包地址归集显示：
+          市值 / 毕业状态 / 累计 creator fee
+        </div>
+
+        <h2 className="text-xl font-bold mb-4 mt-10">📊 持仓</h2>
+        <div className="bg-shield-panel rounded-xl p-8 text-center text-white/40">
+          接入 Helius 余额索引后显示
+        </div>
+      </section>
+    </main>
+  );
+}
