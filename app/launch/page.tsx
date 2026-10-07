@@ -1,1 +1,155 @@
-InVzZSBjbGllbnQiOwoKaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICJyZWFjdCI7CmltcG9ydCB7IHVzZUNvbm5lY3Rpb24sIHVzZVdhbGxldCB9IGZyb20gIkBzb2xhbmEvd2FsbGV0LWFkYXB0ZXItcmVhY3QiOwppbXBvcnQgeyBXYWxsZXRNdWx0aUJ1dHRvbiB9IGZyb20gIkBzb2xhbmEvd2FsbGV0LWFkYXB0ZXItcmVhY3QtdWkiOwppbXBvcnQgTGluayBmcm9tICJuZXh0L2xpbmsiOwppbXBvcnQgeyBidWlsZENyZWF0ZVBvb2xUeCwgRkVFX1RJRVJTIH0gZnJvbSAiQC9saWIvbWV0ZW9yYSI7CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBMYXVuY2hQYWdlKCkgewogIGNvbnN0IHsgY29ubmVjdGlvbiB9ID0gdXNlQ29ubmVjdGlvbigpOwogIGNvbnN0IHsgcHVibGljS2V5LCBzZW5kVHJhbnNhY3Rpb24gfSA9IHVzZVdhbGxldCgpOwogIGNvbnN0IFtuYW1lLCBzZXROYW1lXSA9IHVzZVN0YXRlKCIiKTsKICBjb25zdCBbc3ltYm9sLCBzZXRTeW1ib2xdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtkZXNjLCBzZXREZXNjXSA9IHVzZVN0YXRlKCIiKTsKICBjb25zdCBbdGllciwgc2V0VGllcl0gPSB1c2VTdGF0ZSg1KTsgLy8g5Y+R5biB5Lq65YiG5oiQ5qGj5L2NIDDigJM577yM6buY6K6kIDUlCiAgY29uc3QgW2J1cm5McCwgc2V0QnVybkxwXSA9IHVzZVN0YXRlKGZhbHNlKTsgLy8g54eD54On6YCJ6aG5CiAgY29uc3QgW3N0YXR1cywgc2V0U3RhdHVzXSA9IHVzZVN0YXRlKCIiKTsKICBjb25zdCBbYnVzeSwgc2V0QnVzeV0gPSB1c2VTdGF0ZShmYWxzZSk7CgogIGNvbnN0IGZlZSA9IEZFRV9USUVSU1t0aWVyXTsKCiAgYXN5bmMgZnVuY3Rpb24gaGFuZGxlTGF1bmNoKCkgewogICAgaWYgKCFwdWJsaWNLZXkpIHsKICAgICAgc2V0U3RhdHVzKCLor7flhYjov57mjqXpkrHljIUiKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgaWYgKCFuYW1lIHx8ICFzeW1ib2wpIHsKICAgICAgc2V0U3RhdHVzKCLor7floavlhpnlkI3np7DlkowgdGlja2VyIik7CiAgICAgIHJldHVybjsKICAgIH0KICAgIHNldEJ1c3kodHJ1ZSk7CiAgICBzZXRTdGF0dXMoIue7hOijheS6pOaYk+S4reKApu+8iOS4u+e9ke+8jOecn+WuniBTT0zvvIkiKTsKICAgIHRyeSB7CiAgICAgIC8vIFRPRE86IOWbvueJh+S4iuS8oCArIG1ldGFkYXRhIEpTT07vvIhJcnlzL0Fyd2VhdmXvvInvvIx1cmkg5aGr5YWlCiAgICAgIGNvbnN0IHVyaSA9ICJodHRwczovL3NoaWVsZGxhdW5jaC5saWZlL2FwaS9tZXRhZGF0YS9wbGFjZWhvbGRlci5qc29uIjsKICAgICAgY29uc3QgeyB0eCwgYmFzZU1pbnQgfSA9IGF3YWl0IGJ1aWxkQ3JlYXRlUG9vbFR4KHsKICAgICAgICBjb25uZWN0aW9uLAogICAgICAgIHBheWVyOiBwdWJsaWNLZXksCiAgICAgICAgcG9vbENyZWF0b3I6IHB1YmxpY0tleSwKICAgICAgICB0aWVyLAogICAgICAgIG5hbWUsCiAgICAgICAgc3ltYm9sOiBzeW1ib2wudG9VcHBlckNhc2UoKSwKICAgICAgICB1cmksCiAgICAgICAgYnVybkxwLAogICAgICB9KTsKICAgICAgc2V0U3RhdHVzKCLor7flnKjpkrHljIXkuK3nrb7lkI3igKbvvIjkuLvnvZHkuqTmmJPvvIzosKjmhY7noa7orqTvvIkiKTsKICAgICAgY29uc3Qgc2lnID0gYXdhaXQgc2VuZFRyYW5zYWN0aW9uKHR4LCBjb25uZWN0aW9uKTsKICAgICAgc2V0U3RhdHVzKAogICAgICAgIGDlj5HlsITmiJDlip/vvIFtaW50OiAke2Jhc2VNaW50LnRvQmFzZTU4KCl9IOetvuWQje+8miR7c2lnfVxu5LiL5LiA5q2l77yacmVub3VuY2UgbWludC9mcmVlemUg5p2D6ZmQ77yM54S25ZCO5YiwIEdNR04g5pCcIG1pbnQg5Zyw5Z2A6aqM6K+B6KKr5o2V5o2J44CCYAogICAgICApOwogICAgfSBjYXRjaCAoZTogdW5rbm93bikgewogICAgICBzZXRTdGF0dXMoYOWksei0pe+8miR7ZSBpbnN0YW5jZW9mIEVycm9yID8gZS5tZXNzYWdlIDogU3RyaW5nKGUpfWApOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0QnVzeShmYWxzZSk7CiAgICB9CiAgfQoKICByZXR1cm4gKAogICAgPG1haW4gY2xhc3NOYW1lPSJtaW4taC1zY3JlZW4gYmctc2hpZWxkLWJnIj4KICAgICAgPG5hdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBweC02IHB5LTQgYm9yZGVyLWIgYm9yZGVyLXdoaXRlLzEwIj4KICAgICAgICA8TGluayBocmVmPSIvIiBjbGFzc05hbWU9InRleHQtMnhsIGZvbnQtYm9sZCB0ZXh0LXNoaWVsZC1uZW9uIj4KICAgICAgICAgIPCfm6HvuI8gU2hpZWxkTGF1bmNoCiAgICAgICAgPC9MaW5rPgogICAgICAgIDxXYWxsZXRNdWx0aUJ1dHRvbiAvPgogICAgICA8L25hdj4KCiAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ibWF4LXcteGwgbXgtYXV0byBweC02IHB5LTEyIj4KICAgICAgICA8aDEgY2xhc3NOYW1lPSJ0ZXh0LTN4bCBmb250LWJvbGQgbWItMiI+5Y+R5bCE5Luj5biBPC9oMT4KICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtd2hpdGUvNTAgdGV4dC1zbSBtYi04Ij4KICAgICAgICAgIE1ldGVvcmEgREJDIMK3IOWbuuWumiAxMCDkur/kvpvlupQgwrcg5q+V5Lia6L+B56e7IERBTU0gdjIKICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1yZWQtNDAwIj4gwrcg5Li7572R5qih5byP77yI55yf5a6eIFNPTO+8iTwvc3Bhbj4KICAgICAgICA8L3A+CgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTQiPgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXdoaXRlLzYwIj7lkI3np7A8L2xhYmVsPgogICAgICAgICAgICA8aW5wdXQKICAgICAgICAgICAgICB2YWx1ZT17bmFtZX0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldE5hbWUoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSJTaGllbGQgRG9nIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0ibXQtMSB3LWZ1bGwgYmctc2hpZWxkLXBhbmVsIHJvdW5kZWQtbGcgcHgtNCBweS0zIG91dGxpbmUtbm9uZSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGZvY3VzOmJvcmRlci1zaGllbGQtbmVvbiIKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXdoaXRlLzYwIj5UaWNrZXI8L2xhYmVsPgogICAgICAgICAgICA8aW5wdXQKICAgICAgICAgICAgICB2YWx1ZT17c3ltYm9sfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0U3ltYm9sKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iU0hJRUxEIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0ibXQtMSB3LWZ1bGwgYmctc2hpZWxkLXBhbmVsIHJvdW5kZWQtbGcgcHgtNCBweS0zIG91dGxpbmUtbm9uZSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGZvY3VzOmJvcmRlci1zaGllbGQtbmVvbiIKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdj4KICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXdoaXRlLzYwIj7nroDku4s8L2xhYmVsPgogICAgICAgICAgICA8dGV4dGFyZWEKICAgICAgICAgICAgICB2YWx1ZT17ZGVzY30KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldERlc2MoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICAgIHBsYWNlaG9sZGVyPSLkuIDlj6Xor53ku4vnu43kvaDnmoQgbWVtZeKApiIKICAgICAgICAgICAgICBjbGFzc05hbWU9Im10LTEgdy1mdWxsIGJnLXNoaWVsZC1wYW5lbCByb3VuZGVkLWxnIHB4LTQgcHktMyBvdXRsaW5lLW5vbmUgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBmb2N1czpib3JkZXItc2hpZWxkLW5lb24iCiAgICAgICAgICAgICAgcm93cz17M30KICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJiZy1zaGllbGQtcGFuZWwgcm91bmRlZC1sZyBwLTQiPgogICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtd2hpdGUvNjAiPgogICAgICAgICAgICAgIOWPkeW4geS6uuWIhuaIkO+8mjxzcGFuIGNsYXNzTmFtZT0idGV4dC1zaGllbGQtbmVvbiBmb250LWJvbGQiPnt0aWVyfSU8L3NwYW4+CiAgICAgICAgICAgIDwvbGFiZWw+CiAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgIHR5cGU9InJhbmdlIgogICAgICAgICAgICAgIG1pbj17MH0KICAgICAgICAgICAgICBtYXg9ezl9CiAgICAgICAgICAgICAgdmFsdWU9e3RpZXJ9CiAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRUaWVyKE51bWJlcihlLnRhcmdldC52YWx1ZSkpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0ibXQtMiB3LWZ1bGwiCiAgICAgICAgICAgIC8+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtd2hpdGUvNDAgbXQtMiBzcGFjZS15LTEiPgogICAgICAgICAgICAgIDxwPuaxoOWtkOaAu+i0ueeOh++8mntmZWUudG90YWxGZWVQY3QudG9GaXhlZCgyKX0lPC9wPgogICAgICAgICAgICAgIDxwPuWPkeW4geS6uuaLv++8mntmZWUuY3JlYXRvclBjdH0lIMK3IOW5s+WPsOaLv++8mn57ZmVlLnBsYXRmb3JtUGN0fSUgwrcgTWV0ZW9yYSDljY/orq7vvJoyMCU8L3A+CiAgICAgICAgICAgICAgPHA+5bmz5Y+w6LS56Ieq5Yqo5b2S6ZuG5YiwIEUycXjigKZ0NlJvPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIDxsYWJlbCBjbGFzc05hbWU9ImZsZXggaXRlbXMtc3RhcnQgZ2FwLTMgYmctc2hpZWxkLXBhbmVsIHJvdW5kZWQtbGcgcC00IGN1cnNvci1wb2ludGVyIj4KICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgdHlwZT0iY2hlY2tib3giCiAgICAgICAgICAgICAgY2hlY2tlZD17YnVybkxwfQogICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0QnVybkxwKGUudGFyZ2V0LmNoZWNrZWQpfQogICAgICAgICAgICAgIGNsYXNzTmFtZT0ibXQtMSB3LTQgaC00IgogICAgICAgICAgICAvPgogICAgICAgICAgICA8c3Bhbj4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtc20gZm9udC1ib2xkIj7wn5SlIOeHg+eDpyBMUDwvc3Bhbj4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9ImJsb2NrIHRleHQteHMgdGV4dC13aGl0ZS80MCBtdC0xIj4KICAgICAgICAgICAgICAgIOavleS4muWQjuWwhua1geWKqOaAp+WHreivgeaJk+WFpemUgOavgeWcsOWdgO+8iOiAjOmdnumUgeS7k++8ie+8jOW9u+W6leadnOe7nei3kei3r+WrjOeWke+8jOS8oOaSreaXtuabtOacieivtOacjeWKmwogICAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgPC9sYWJlbD4KCiAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZUxhdW5jaH0KICAgICAgICAgICAgZGlzYWJsZWQ9e2J1c3l9CiAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIGJnLXNoaWVsZC1uZW9uIHRleHQtYmxhY2sgZm9udC1ib2xkIHB5LTQgcm91bmRlZC14bCBob3ZlcjpvcGFjaXR5LTkwIGRpc2FibGVkOm9wYWNpdHktNDAiCiAgICAgICAgICA+CiAgICAgICAgICAgIHtidXN5ID8gIuWkhOeQhuS4reKApiIgOiAi8J+agCDlj5HlsITvvIjkuLvnvZHvvIkifQogICAgICAgICAgPC9idXR0b24+CgogICAgICAgICAge3N0YXR1cyAmJiAoCiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXdoaXRlLzYwIGJyZWFrLWFsbCBiZy1zaGllbGQtcGFuZWwgcm91bmRlZC1sZyBwLTQgd2hpdGVzcGFjZS1wcmUtd3JhcCI+CiAgICAgICAgICAgICAge3N0YXR1c30KICAgICAgICAgICAgPC9wPgogICAgICAgICAgKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgogICAgPC9tYWluPgogICk7Cn0K
+"use client";
+
+import { useState } from "react";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import Link from "next/link";
+import { buildCreatePoolTx, FEE_TIERS } from "@/lib/meteora";
+
+export default function LaunchPage() {
+  const { connection } = useConnection();
+  const { publicKey, sendTransaction } = useWallet();
+  const [name, setName] = useState("");
+  const [symbol, setSymbol] = useState("");
+  const [desc, setDesc] = useState("");
+  const [tier, setTier] = useState(5); // 发币人分成档位 0–9，默认 5%
+  const [burnLp, setBurnLp] = useState(false); // 燃烧选项
+  const [status, setStatus] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const fee = FEE_TIERS[tier];
+
+  async function handleLaunch() {
+    if (!publicKey) {
+      setStatus("请先连接钱包");
+      return;
+    }
+    if (!name || !symbol) {
+      setStatus("请填写名称和 ticker");
+      return;
+    }
+    setBusy(true);
+    setStatus("组装交易中…（主网，真实 SOL）");
+    try {
+      // TODO: 图片上传 + metadata JSON（Irys/Arweave），uri 填入
+      const uri = "https://shieldlaunch.life/api/metadata/placeholder.json";
+      const { tx, baseMint } = await buildCreatePoolTx({
+        connection,
+        payer: publicKey,
+        poolCreator: publicKey,
+        tier,
+        name,
+        symbol: symbol.toUpperCase(),
+        uri,
+        burnLp,
+      });
+      setStatus("请在钱包中签名…（主网交易，谨慎确认）");
+      const sig = await sendTransaction(tx, connection);
+      setStatus(
+        `发射成功！mint: ${baseMint.toBase58()} 签名：${sig}\n下一步：renounce mint/freeze 权限，然后到 GMGN 搜 mint 地址验证被捕捉。`
+      );
+    } catch (e: unknown) {
+      setStatus(`失败：${e instanceof Error ? e.message : String(e)}`);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <main className="min-h-screen bg-shield-bg">
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <Link href="/" className="text-2xl font-bold text-shield-neon">
+          🛡️ ShieldLaunch
+        </Link>
+        <WalletMultiButton />
+      </nav>
+
+      <section className="max-w-xl mx-auto px-6 py-12">
+        <h1 className="text-3xl font-bold mb-2">发射代币</h1>
+        <p className="text-white/50 text-sm mb-8">
+          Meteora DBC · 固定 10 亿供应 · 毕业迁移 DAMM v2
+          <span className="text-red-400"> · 主网模式（真实 SOL）</span>
+        </p>
+
+        <div className="space-y-4">
+          <div>
+            <label className="text-sm text-white/60">名称</label>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Shield Dog"
+              className="mt-1 w-full bg-shield-panel rounded-lg px-4 py-3 outline-none border border-white/10 focus:border-shield-neon"
+            />
+          </div>
+          <div>
+            <label className="text-sm text-white/60">Ticker</label>
+            <input
+              value={symbol}
+              onChange={(e) => setSymbol(e.target.value)}
+              placeholder="SHIELD"
+              className="mt-1 w-full bg-shield-panel rounded-lg px-4 py-3 outline-none border border-white/10 focus:border-shield-neon"
+            />
+          </div>
+          <div>
+            <label className="text-sm text-white/60">简介</label>
+            <textarea
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+              placeholder="一句话介绍你的 meme…"
+              className="mt-1 w-full bg-shield-panel rounded-lg px-4 py-3 outline-none border border-white/10 focus:border-shield-neon"
+              rows={3}
+            />
+          </div>
+
+          <div className="bg-shield-panel rounded-lg p-4">
+            <label className="text-sm text-white/60">
+              发币人分成：<span className="text-shield-neon font-bold">{tier}%</span>
+            </label>
+            <input
+              type="range"
+              min={0}
+              max={9}
+              value={tier}
+              onChange={(e) => setTier(Number(e.target.value))}
+              className="mt-2 w-full"
+            />
+            <div className="text-xs text-white/40 mt-2 space-y-1">
+              <p>池子总费率：{fee.totalFeePct.toFixed(2)}%</p>
+              <p>发币人拿：{fee.creatorPct}% · 平台拿：~{fee.platformPct}% · Meteora 协议：20%</p>
+              <p>平台费自动归集到 E2qx…t6Ro</p>
+            </div>
+          </div>
+
+          <label className="flex items-start gap-3 bg-shield-panel rounded-lg p-4 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={burnLp}
+              onChange={(e) => setBurnLp(e.target.checked)}
+              className="mt-1 w-4 h-4"
+            />
+            <span>
+              <span className="text-sm font-bold">🔥 燃烧 LP</span>
+              <span className="block text-xs text-white/40 mt-1">
+                毕业后将流动性凭证打入销毁地址（而非锁仓），彻底杜绝跑路嫌疑，传播时更有说服力
+              </span>
+            </span>
+          </label>
+
+          <button
+            onClick={handleLaunch}
+            disabled={busy}
+            className="w-full bg-shield-neon text-black font-bold py-4 rounded-xl hover:opacity-90 disabled:opacity-40"
+          >
+            {busy ? "处理中…" : "🚀 发射（主网）"}
+          </button>
+
+          {status && (
+            <p className="text-sm text-white/60 break-all bg-shield-panel rounded-lg p-4 whitespace-pre-wrap">
+              {status}
+            </p>
+          )}
+        </div>
+      </section>
+    </main>
+  );
+}
