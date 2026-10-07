@@ -16,7 +16,11 @@
  */
 
 import { Connection, Keypair, PublicKey, Transaction } from "@solana/web3.js";
-import { DynamicBondingCurveClient, type CreatePoolParams } from "@meteora-ag/dynamic-bonding-curve-sdk";
+import {
+  DynamicBondingCurveClient,
+  buildCurveWithMarketCap,
+  type CreatePoolParams,
+} from "@meteora-ag/dynamic-bonding-curve-sdk";
 import BN from "bn.js";
 import {
   DBC_PROGRAM_ID,
@@ -76,8 +80,25 @@ export function getPlatformConfig(tier: number): PublicKey {
 }
 
 /**
+ * 曲线经济参数（创建 config 前最终确认，不可改）
+ * - 开盘市值 $5,000 → 毕业市值 $15,000（对标 gomo）
+ * - SOL 计价按 SOL_USD 换算；config 建好后阈值锁定为 SOL 数量，
+ *   SOL 涨跌会让毕业时的美元市值同向浮动（gomo 同理）
+ */
+export const CURVE_ECONOMICS = {
+  initialMarketCapUsd: 5000,
+  migrationMarketCapUsd: 15000,
+  solUsd: 120, // 建 config 前按实时 SOL 价格复核
+} as const;
+
+/**
  * 建 config（每档一次，共 10 次，每次约 0.006 SOL）
  * 必须由用户钱包签名。config 建好后把地址填入 constants → PLATFORM_CONFIGS_MAINNET
+ *
+ * 实现说明：整套 ConfigParameters 由 Meteora SDK 的 buildCurveWithMarketCap
+ * 按目标市值直接生成（含 curve / sqrtStartPrice / migrationQuoteThreshold），
+ * 不手写字段——旧版手写字段名与新版 IDL 已错位，且 migrationOption 误用了
+ * 已废弃的 DAMM v1（0），此处修正为 DAMM v2（1）。
  */
 export async function buildCreateConfigTx(params: {
   connection: Connection;
@@ -90,68 +111,64 @@ export async function buildCreateConfigTx(params: {
   const client = getClient(connection);
   const configKeypair = Keypair.generate();
 
+  const feeBps = Math.round(fee.totalFeePct * 100); // 总费率 → bps（起止相同 = 固定费率）
+  const curveParams = buildCurveWithMarketCap({
+    token: {
+      tokenType: 0, // SPL
+      tokenBaseDecimal: 6, // 6 位小数（gomo 同款）
+      tokenQuoteDecimal: 9, // SOL
+      tokenAuthorityOption: 0,
+      totalTokenSupply: 1e9, // 固定 10 亿
+      leftover: 0,
+    },
+    fee: {
+      baseFeeParams: {
+        baseFeeMode: 0, // 线性（起止相同即固定费率）
+        feeSchedulerParam: {
+          startingFeeBps: feeBps,
+          endingFeeBps: feeBps,
+          numberOfPeriod: 0,
+          totalDuration: 0,
+        },
+      },
+      dynamicFeeEnabled: true,
+      collectFeeMode: 0, // 只收 SOL（quote）费用
+      creatorTradingFeePercentage: fee.creatorShareU8,
+      poolCreationFee: 0,
+      enableFirstSwapWithMinFee: false,
+    },
+    migration: {
+      migrationOption: 1, // ★ DAMM v2（0 = DAMM v1 已废弃，新 config 不可用）
+      migrationFeeOption: 0,
+      migrationFee: { feePercentage: 0, creatorFeePercentage: 0 },
+    },
+    liquidityDistribution: {
+      // 四项之和必须 =100；设计：迁移后 LP 全部永久锁定（防跑路），平台/发币人各占一半
+      partnerLiquidityPercentage: 0,
+      partnerPermanentLockedLiquidityPercentage: 50, // 平台侧永久锁定
+      creatorLiquidityPercentage: 0,
+      creatorPermanentLockedLiquidityPercentage: 50, // 发币人侧永久锁定
+    },
+    lockedVesting: {
+      totalLockedVestingAmount: 0,
+      numberOfVestingPeriod: 0,
+      cliffUnlockAmount: 0,
+      totalVestingDuration: 0,
+      cliffDurationFromMigrationTime: 0,
+    },
+    activationType: 0,
+    initialMarketCap: CURVE_ECONOMICS.initialMarketCapUsd / CURVE_ECONOMICS.solUsd,
+    migrationMarketCap: CURVE_ECONOMICS.migrationMarketCapUsd / CURVE_ECONOMICS.solUsd,
+  });
+
   const tx: Transaction = await client.partner.createConfig({
     payer,
     config: configKeypair.publicKey,
     feeClaimer: PLATFORM_FEE_WALLET, // ★ 平台费归集到用户钱包
     leftoverReceiver: PLATFORM_FEE_WALLET,
     quoteMint: WSOL_MINT, // SOL 本位
-    poolFees: {
-      baseFee: {
-        cliffFeeNumerator: fee.cliffFeeNumerator,
-        numberOfPeriod: 0,
-        reductionFactor: new BN("0"),
-        periodFrequency: new BN("0"),
-        feeSchedulerMode: 0,
-      },
-      dynamicFee: {
-        binStep: 1,
-        binStepU128: new BN("1844674407370955"),
-        filterPeriod: 10,
-        decayPeriod: 120,
-        reductionFactor: 1000,
-        variableFeeControl: 100000,
-        maxVolatilityAccumulator: 100000,
-      },
-    },
-    activationType: 0,
-    collectFeeMode: 0, // 只收 SOL 费用
-    migrationOption: 0, // 毕业迁移 DAMM v2
-    tokenType: 0,
-    tokenDecimal: 6, // 6 位小数（gomo 同款）
-    migrationQuoteThreshold: new BN("15000000000"), // ~15 SOL，按 gomo 约 $15k 市值毕业思路；SOL 价格波动时复核
-    partnerLpPercentage: 0,
-    creatorLpPercentage: 0,
-    partnerLockedLpPercentage: 50, // 毕业后 LP 永久锁定（防跑路卖点）
-    creatorLockedLpPercentage: 50,
-    sqrtStartPrice: new BN("58333726687135158"), // TODO: 用 buildCurveWithMarketCap 按目标开盘市值精算
-    lockedVesting: {
-      amountPerPeriod: new BN("0"),
-      cliffDurationFromMigrationTime: new BN("0"),
-      frequency: new BN("0"),
-      numberOfPeriod: new BN("0"),
-      cliffUnlockAmount: new BN("0"),
-    },
-    migrationFeeOption: 0,
-    tokenSupply: {
-      preMigrationTokenSupply: new BN("1000000000000000"), // 10 亿 × 10^6
-      postMigrationTokenSupply: new BN("1000000000000000"),
-    },
-    creatorTradingFeePercentage: fee.creatorShareU8,
-    padding0: [],
-    padding1: [],
-    curve: [
-      // TODO: 用 buildCurveWithMarketCap 生成精确曲线后替换
-      {
-        sqrtPrice: new BN("233334906748540631"),
-        liquidity: new BN("622226417996106429201027821619672729"),
-      },
-      {
-        sqrtPrice: new BN("79226673521066979257578248091"),
-        liquidity: new BN("1"),
-      },
-    ],
-  } as never);
+    ...curveParams,
+  });
 
   return { tx, configKeypair };
 }
