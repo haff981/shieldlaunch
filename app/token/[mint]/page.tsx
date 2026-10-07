@@ -1,1 +1,24 @@
-aW1wb3J0IExpbmsgZnJvbSAibmV4dC9saW5rIjsKCmludGVyZmFjZSBQcm9wcyB7CiAgcGFyYW1zOiBQcm9taXNlPHsgbWludDogc3RyaW5nIH0+Owp9CgpleHBvcnQgZGVmYXVsdCBhc3luYyBmdW5jdGlvbiBUb2tlblBhZ2UoeyBwYXJhbXMgfTogUHJvcHMpIHsKICBjb25zdCB7IG1pbnQgfSA9IGF3YWl0IHBhcmFtczsKICByZXR1cm4gKAogICAgPG1haW4gY2xhc3NOYW1lPSJtaW4taC1zY3JlZW4gYmctc2hpZWxkLWJnIj4KICAgICAgPG5hdiBjbGFzc05hbWU9InB4LTYgcHktNCBib3JkZXItYiBib3JkZXItd2hpdGUvMTAiPgogICAgICAgIDxMaW5rIGhyZWY9Ii8iIGNsYXNzTmFtZT0idGV4dC0yeGwgZm9udC1ib2xkIHRleHQtc2hpZWxkLW5lb24iPgogICAgICAgICAg8J+boe+4jyBTaGllbGRMYXVuY2gKICAgICAgICA8L0xpbms+CiAgICAgIDwvbmF2PgogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9Im1heC13LTR4bCBteC1hdXRvIHB4LTYgcHktMTIiPgogICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS80MCB0ZXh0LXNtIGJyZWFrLWFsbCBtYi00Ij57bWludH08L3A+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJnLXNoaWVsZC1wYW5lbCByb3VuZGVkLXhsIHAtOCB0ZXh0LWNlbnRlciB0ZXh0LXdoaXRlLzQwIj4KICAgICAgICAgIEsg57q/IC8g5Lqk5piT6Z2i5p2/IC8g5q+V5Lia6L+b5bqmIOKAlCBkZXZuZXQg6IGU6LCD5ZCO5o6l5YWlCiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvbWFpbj4KICApOwp9Cg==
+import Link from "next/link";
+
+interface Props {
+  params: Promise<{ mint: string }>;
+}
+
+export default async function TokenPage({ params }: Props) {
+  const { mint } = await params;
+  return (
+    <main className="min-h-screen bg-shield-bg">
+      <nav className="px-6 py-4 border-b border-white/10">
+        <Link href="/" className="text-2xl font-bold text-shield-neon">
+          🛡️ ShieldLaunch
+        </Link>
+      </nav>
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <p className="text-white/40 text-sm break-all mb-4">{mint}</p>
+        <div className="bg-shield-panel rounded-xl p-8 text-center text-white/40">
+          K 线 / 交易面板 / 毕业进度 — devnet 联调后接入
+        </div>
+      </section>
+    </main>
+  );
+}
