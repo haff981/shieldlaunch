@@ -1,1 +1,8 @@
-aW1wb3J0IHR5cGUgeyBOZXh0Q29uZmlnIH0gZnJvbSAibmV4dCI7Cgpjb25zdCBuZXh0Q29uZmlnOiBOZXh0Q29uZmlnID0gewogIC8vIOmSseWMhSBhZGFwdGVyIOmcgOimgeeahCBwb2x5ZmlsbCDnlLEgQHNvbGFuYS93YWxsZXQtYWRhcHRlciDlpITnkIYKICB3ZWJwYWNrOiAoY29uZmlnKSA9PiBjb25maWcsCn07CgpleHBvcnQgZGVmYXVsdCBuZXh0Q29uZmlnOwo=
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // 钱包 adapter 需要的 polyfill 由 @solana/wallet-adapter 处理
+  webpack: (config) => config,
+};
+
+export default nextConfig;
