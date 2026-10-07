@@ -1,1 +1,48 @@
-IyBTaGllbGRMYXVuY2gg5p625p6ECgojIyDkuIDlj6Xor50KZ29tbyDlvI8gU29sYW5hIOWPkeW4geW5s+WPsO+8muWJjeerr+WPkeW4gSDihpIgTWV0ZW9yYSBEQkMg6IGU5ZCI5puy57q/IOKGkiDmr5XkuJrov4Hnp7sgREFNTSB2MuOAggrlt67lvILljJbvvJoqKuS4quS6uui1hOaWmemhteWxleekuiLmiJHlj5HooYznmoTluIEiKirvvIhnb21vIOayoeaciei/meagj++8ieOAggoKIyMg5oqA5pyv5qCI77yI5YWo6YOo5YWN6LS55qGj6LW35q2l77yJCnwg5bGCIHwg6YCJ5Z6LIHwg6K+05piOIHwKfC0tLXwtLS18LS0tfAp8IOWJjeerryB8IE5leHQuanMgMTUgKyBUYWlsd2luZCB8IOmDqOe9siBWZXJjZWwgLyBDbG91ZGZsYXJlIFBhZ2VzIHwKfCDpkrHljIUgfCBAc29sYW5hL3dhbGxldC1hZGFwdGVyIHwgUGhhbnRvbSAvIFNvbGZsYXJl77yM55So5oi36Ieq562+5ZCNIHwKfCDpk77kuIogfCBNZXRlb3JhIERCQyBTREsgfCDlt7LlrqHorqHnqIvluo/vvIzkuI3oh6rlhpnlkIjnuqYgfAp8IOaVsOaNriB8IFN1cGFiYXNlIHwgdG9rZW5fcmVnaXN0cnnvvIhtaW50IOKGlCBjcmVhdG9yIOaYoOWwhO+8iSB8Cnwg57Si5byVIHwgSGVsaXVzIHwg5L2Z6aKdIC8g5Lqk5piTIC8gd2ViaG9vayB8Cnwg5Z+f5ZCNIHwgc2hpZWxkbGF1bmNoLmxpZmUgfCBTcGFjZXNoaXAg5bey6LStIHwKCiMjIOi0ueeUqOa1ge+8iOWvueaghyBnb21v77yMMTAg5qGj77yJCmBgYArkuqTmmJPogIXkubAv5Y2WCiAg4oaSIERCQyDmsaDmlLbkuqTmmJPotLkKICAgIOKGkiAyMCUg4oaSIE1ldGVvcmEg5Y2P6K6uCiAgICDihpIg5Ymp5L2ZIDgwJSDmjInmoaPkvY3mi4bliIbvvJoKICAgICAgICDlj5HluIHkurroh6rpgIkgMOKAkzkl77yI5Lqk5piT6aKd5Y2g5q+U77yJCiAgICAgICAg5bmz5Y+wIH4xJe+8iOS6pOaYk+mineWNoOavlO+8ieKGkiBmZWVDbGFpbWVyID0gRTJxeOKApnQ2Um8KYGBgCi0gMTAg5LiqIGNvbmZpZ++8jOavj+aho+S4gOS4qu+8iOaAu+i0ueeOhyA9ICjmoaPkvY0lICsgMSUpIC8gMC4477yJ77yaCiAgMCXihpIxLjI1Je+8jDEl4oaSMi41Je+8jDIl4oaSMy43NSXvvIwzJeKGkjUl77yMNCXihpI2LjI1Je+8jAogIDUl4oaSNy41Je+8jDYl4oaSOC43NSXvvIw3JeKGkjEwJe+8jDgl4oaSMTEuMjUl77yMOSXihpIxMi41JQotIOavj+S4qiBjb25maWcg5Yib5bu657qmIDAuMDA2IFNPTO+8jDEwIOS4que6piAwLjA2IFNPTO+8jOS4gOasoeaAp+OAggotIOmihui0ue+8mmBjbGFpbVBhcnRuZXJUcmFkaW5nRmVlYO+8jOeUsei0uemSseWMheetvuWQjeWPkei1t++8jOWPr+maj+aXtumihuOAggotIOavleS4mu+8mnF1b3RlUmVzZXJ2ZSDovr7pmIjlgLzvvIh+MTUgU09M77yJ4oaSIOiHquWKqOi/geenuyBEQU1NIHYy77yMTFAg5oyJIGNvbmZpZyDmr5TkvovmsLjkuYXplIHlrprvvJvoi6Xlj5HluIHml7bli77pgIki54eD54OnIExQIu+8jOavleS4muWQjiBMUCDlh63or4HmiZPlhaXplIDmr4HlnLDlnYDjgIIKCiMjIEdNR04gLyBEZXhTY3JlZW5lciDooqvmjZXmjYnmnaHku7YKMS4g5qCH5YeGIFNQTCBtaW50ICsg6ZO+5LiLIG1ldGFkYXRh77yIbmFtZS9zeW1ib2wvaW1hZ2XvvInjgIIKMi4gKipyZW5vdW5jZSBtaW50IGF1dGhvcml0eSArIGZyZWV6ZSBhdXRob3JpdHkqKu+8iOWPkeaxoOWQjueri+WNs+WBmu+8jOWQpuWImeWuieWFqOivhOWIhuaMgue6ou+8ieOAggozLiDlnKggREJDIOaxoOmHjOacieecn+WunuS6pOaYk++8iEdNR04gbmV3X3BhaXJzIOe0ouW8leaJgOaciSBTb2xhbmEgREVY77yM5ZCrIE1ldGVvcmHvvInjgIIKNC4g77yI5Y+v6YCJ77yJRGV4U2NyZWVuZXIg5LuY6LS5572u6aG25Yqg6YCf5Lyg5pKt44CCCgojIyDpobXpnaIKLSBgL2Ag6aaW6aG177ya5Y+R5bCE5YiX6KGoCi0gYC9sYXVuY2hgIOWPkeW4geWQkeWvvO+8muWQjeensCAvIHRpY2tlciAvIOWbvueJhyAvIOeugOS7iyAvIOWPkeW4geS6uuWIhuaIkCAw4oCTOSUKLSBgL3Rva2VuL1ttaW50XWAg5Luj5biB6K+m5oOF77yaSyDnur8gLyDkuqTmmJMgLyDmr5XkuJrov5vluqYKLSBgL3Byb2ZpbGUvW3dhbGxldF1gIOS4quS6uui1hOaWme+8mioq5oiR5Y+R6KGM55qE5biBKirvvIjluILlgLwv5q+V5Lia54q25oCBL+e0r+iuoSBmZWXvvIkrIOaMgeS7kwoKIyMg5a6J5YWo57qi57q/Ci0g5LiN5Luj562+44CB5LiN56Kw56eB6ZKl77ya5omA5pyJ5LiK6ZO+5Yqo5L2c55Sx55So5oi36ZKx5YyF562+5ZCN44CCCi0g5YWIIGRldm5ldCDlhajmtYHnqIvot5HpgJrvvIzlho3kuLvnvZHjgIIKLSDkuLvnvZEgY29uZmlnIOWIm+W7uuOAgemmluW4geWPkeWwhO+8jOavj+atpeWNleeLrOehruiupOOAggo=
+# ShieldLaunch 架构
+
+## 一句话
+gomo 式 Solana 发币平台：前端发币 → Meteora DBC 联合曲线 → 毕业迁移 DAMM v2。
+差异化：**个人资料页展示"我发行的币"**（gomo 没有这栏）。
+
+## 技术栈（全部免费档起步）
+| 层 | 选型 | 说明 |
+|---|---|---|
+| 前端 | Next.js 15 + Tailwind | 部署 Vercel / Cloudflare Pages |
+| 钱包 | @solana/wallet-adapter | Phantom / Solflare，用户自签名 |
+| 链上 | Meteora DBC SDK | 已审计程序，不自写合约 |
+| 数据 | Supabase | token_registry（mint ↔ creator 映射） |
+| 索引 | Helius | 余额 / 交易 / webhook |
+| 域名 | shieldlaunch.life | Spaceship 已购 |
+
+## 费用流（对标 gomo，10 档）
+```
+交易者买/卖
+  → DBC 池收交易费
+    → 20% → Meteora 协议
+    → 剩余 80% 按档位拆分：
+        发币人自选 0–9%（交易额占比）
+        平台 ~1%（交易额占比）→ feeClaimer = E2qx…t6Ro
+```
+- 10 个 config，每档一个（总费率 = (档位% + 1%) / 0.8）：
+  0%→1.25%，1%→2.5%，2%→3.75%，3%→5%，4%→6.25%，
+  5%→7.5%，6%→8.75%，7%→10%，8%→11.25%，9%→12.5%
+- 每个 config 创建约 0.006 SOL，10 个约 0.06 SOL，一次性。
+- 领费：`claimPartnerTradingFee`，由费钱包签名发起，可随时领。
+- 毕业：quoteReserve 达阈值（~15 SOL）→ 自动迁移 DAMM v2，LP 按 config 比例永久锁定；若发币时勾选"燃烧 LP"，毕业后 LP 凭证打入销毁地址。
+
+## GMGN / DexScreener 被捕捉条件
+1. 标准 SPL mint + 链下 metadata（name/symbol/image）。
+2. **renounce mint authority + freeze authority**（发池后立即做，否则安全评分挂红）。
+3. 在 DBC 池里有真实交易（GMGN new_pairs 索引所有 Solana DEX，含 Meteora）。
+4. （可选）DexScreener 付费置顶加速传播。
+
+## 页面
+- `/` 首页：发射列表
+- `/launch` 发币向导：名称 / ticker / 图片 / 简介 / 发币人分成 0–9%
+- `/token/[mint]` 代币详情：K 线 / 交易 / 毕业进度
+- `/profile/[wallet]` 个人资料：**我发行的币**（市值/毕业状态/累计 fee）+ 持仓
+
+## 安全红线
+- 不代签、不碰私钥：所有上链动作由用户钱包签名。
+- 先 devnet 全流程跑通，再主网。
+- 主网 config 创建、首币发射，每步单独确认。
