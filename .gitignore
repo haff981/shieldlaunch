@@ -1,1 +1,16 @@
-IyBkZXBlbmRlbmNpZXMKbm9kZV9tb2R1bGVzLwoKIyBuZXh0LmpzCi5uZXh0LwpvdXQvCgojIGVudgouZW52Ci5lbnYqLmxvY2FsCgojIGxvZ3MKKi5sb2cKCiMgT1MKLkRTX1N0b3JlCg==
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env
+.env
+.env*.local
+
+# logs
+*.log
+
+# OS
+.DS_Store
