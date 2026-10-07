@@ -1,1 +1,18 @@
-aW1wb3J0IHR5cGUgeyBNZXRhZGF0YSB9IGZyb20gIm5leHQiOwppbXBvcnQgIi4vZ2xvYmFscy5jc3MiOwppbXBvcnQgUHJvdmlkZXJzIGZyb20gIkAvY29tcG9uZW50cy9Qcm92aWRlcnMiOwoKZXhwb3J0IGNvbnN0IG1ldGFkYXRhOiBNZXRhZGF0YSA9IHsKICB0aXRsZTogIlNoaWVsZExhdW5jaCDigJQgU29sYW5hIE1lbWVjb2luIExhdW5jaHBhZCIsCiAgZGVzY3JpcHRpb246ICJMYXVuY2ggdG9rZW5zIG9uIE1ldGVvcmEgREJDLiBDcmVhdG9ycyBlYXJuLCBwbGF0Zm9ybSBlYXJucy4gc2hpZWxkbGF1bmNoLmxpZmUiLAp9OwoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gUm9vdExheW91dCh7IGNoaWxkcmVuIH06IHsgY2hpbGRyZW46IFJlYWN0LlJlYWN0Tm9kZSB9KSB7CiAgcmV0dXJuICgKICAgIDxodG1sIGxhbmc9InpoLUNOIj4KICAgICAgPGJvZHk+CiAgICAgICAgPFByb3ZpZGVycz57Y2hpbGRyZW59PC9Qcm92aWRlcnM+CiAgICAgIDwvYm9keT4KICAgIDwvaHRtbD4KICApOwp9Cg==
+import type { Metadata } from "next";
+import "./globals.css";
+import Providers from "@/components/Providers";
+
+export const metadata: Metadata = {
+  title: "ShieldLaunch — Solana Memecoin Launchpad",
+  description: "Launch tokens on Meteora DBC. Creators earn, platform earns. shieldlaunch.life",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="zh-CN">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
