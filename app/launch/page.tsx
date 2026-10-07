@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletButton } from "@/components/WalletButton";
 import Link from "next/link";
 import { buildCreatePoolTx, FEE_TIERS } from "@/lib/meteora";
 
@@ -61,7 +61,7 @@ export default function LaunchPage() {
         <Link href="/" className="text-2xl font-bold text-shield-neon">
           🛡️ ShieldLaunch
         </Link>
-        <WalletMultiButton />
+        <WalletButton />
       </nav>
 
       <section className="max-w-xl mx-auto px-6 py-12">
