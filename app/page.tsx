@@ -1,1 +1,45 @@
-aW1wb3J0IExpbmsgZnJvbSAibmV4dC9saW5rIjsKaW1wb3J0IHsgV2FsbGV0TXVsdGlCdXR0b24gfSBmcm9tICJAc29sYW5hL3dhbGxldC1hZGFwdGVyLXJlYWN0LXVpIjsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEhvbWUoKSB7CiAgcmV0dXJuICgKICAgIDxtYWluIGNsYXNzTmFtZT0ibWluLWgtc2NyZWVuIGJnLXNoaWVsZC1iZyI+CiAgICAgIDxuYXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gcHgtNiBweS00IGJvcmRlci1iIGJvcmRlci13aGl0ZS8xMCI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtMnhsIGZvbnQtYm9sZCB0ZXh0LXNoaWVsZC1uZW9uIj7wn5uh77iPIFNoaWVsZExhdW5jaDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtNCI+CiAgICAgICAgICA8TGluayBocmVmPSIvbGF1bmNoIiBjbGFzc05hbWU9InRleHQtc20gdGV4dC13aGl0ZS83MCBob3Zlcjp0ZXh0LXdoaXRlIj4KICAgICAgICAgICAg5Y+R5biBCiAgICAgICAgICA8L0xpbms+CiAgICAgICAgICA8V2FsbGV0TXVsdGlCdXR0b24gLz4KICAgICAgICA8L2Rpdj4KICAgICAgPC9uYXY+CgogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9Im1heC13LTR4bCBteC1hdXRvIHB4LTYgcHktMjQgdGV4dC1jZW50ZXIiPgogICAgICAgIDxoMSBjbGFzc05hbWU9InRleHQtNXhsIGZvbnQtYm9sZCBtYi02Ij4KICAgICAgICAgIOWcqCBTb2xhbmEg5LiKPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LXNoaWVsZC1uZW9uIj7lj5HlsIQ8L3NwYW4+5L2g55qEIE1lbWUKICAgICAgICA8L2gxPgogICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS82MCB0ZXh0LWxnIG1iLTEwIj4KICAgICAgICAgIE1ldGVvcmEg5Yqo5oCB6IGU5ZCI5puy57q/IMK3IOavleS4muiHquWKqOi/geenuyBEQU1NIHYyIMK3IOa1geWKqOaAp+awuOS5hemUgeWumgogICAgICAgICAgPGJyIC8+CiAgICAgICAgICDlj5HluIHkurrliIbmiJDlj6/oh6rpgInvvIzlubPlj7DmiYvnu63otLnoh6rliqjlvZLpm4YKICAgICAgICA8L3A+CiAgICAgICAgPExpbmsKICAgICAgICAgIGhyZWY9Ii9sYXVuY2giCiAgICAgICAgICBjbGFzc05hbWU9ImlubGluZS1ibG9jayBiZy1zaGllbGQtbmVvbiB0ZXh0LWJsYWNrIGZvbnQtYm9sZCBweC04IHB5LTQgcm91bmRlZC14bCB0ZXh0LWxnIGhvdmVyOm9wYWNpdHktOTAiCiAgICAgICAgPgogICAgICAgICAg56uL5Y2z5Y+R5biBIOKGkgogICAgICAgIDwvTGluaz4KICAgICAgICA8cCBjbGFzc05hbWU9Im10LTYgdGV4dC14cyB0ZXh0LXdoaXRlLzMwIj4KICAgICAgICAgIE1ldGVvcmEgREJDIMK3IOS4u+e9keaooeW8jyDCtyDlj5HluIHkurrliIbmiJAgMOKAkzklIOiHqumAiQogICAgICAgIDwvcD4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJtYXgtdy00eGwgbXgtYXV0byBweC02IHBiLTI0Ij4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LXhsIGZvbnQtYm9sZCBtYi00IHRleHQtd2hpdGUvODAiPvCflKUg5q2j5Zyo5Y+R5bCEPC9oMj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmctc2hpZWxkLXBhbmVsIHJvdW5kZWQteGwgcC04IHRleHQtY2VudGVyIHRleHQtd2hpdGUvNDAiPgogICAgICAgICAgY29uZmlnIOW7uuWlveOAgemmluW4geWPkeWwhOWQjui/memHjOS8muWunuaXtuWIl+WHugogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CiAgICA8L21haW4+CiAgKTsKfQo=
+import Link from "next/link";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-shield-bg">
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <div className="text-2xl font-bold text-shield-neon">🛡️ ShieldLaunch</div>
+        <div className="flex items-center gap-4">
+          <Link href="/launch" className="text-sm text-white/70 hover:text-white">
+            发币
+          </Link>
+          <WalletMultiButton />
+        </div>
+      </nav>
+
+      <section className="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h1 className="text-5xl font-bold mb-6">
+          在 Solana 上<span className="text-shield-neon">发射</span>你的 Meme
+        </h1>
+        <p className="text-white/60 text-lg mb-10">
+          Meteora 动态联合曲线 · 毕业自动迁移 DAMM v2 · 流动性永久锁定
+          <br />
+          发币人分成可自选，平台手续费自动归集
+        </p>
+        <Link
+          href="/launch"
+          className="inline-block bg-shield-neon text-black font-bold px-8 py-4 rounded-xl text-lg hover:opacity-90"
+        >
+          立即发币 →
+        </Link>
+        <p className="mt-6 text-xs text-white/30">
+          Meteora DBC · 主网模式 · 发币人分成 0–9% 自选
+        </p>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-6 pb-24">
+        <h2 className="text-xl font-bold mb-4 text-white/80">🔥 正在发射</h2>
+        <div className="bg-shield-panel rounded-xl p-8 text-center text-white/40">
+          config 建好、首币发射后这里会实时列出
+        </div>
+      </section>
+    </main>
+  );
+}
