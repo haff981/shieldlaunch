@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletButton } from "@/components/WalletButton";
 
 interface Props {
   params: Promise<{ wallet: string }>;
@@ -22,7 +22,7 @@ export default async function ProfilePage({ params }: Props) {
         <Link href="/" className="text-2xl font-bold text-shield-neon">
           🛡️ ShieldLaunch
         </Link>
-        <WalletMultiButton />
+        <WalletButton />
       </nav>
 
       <section className="max-w-4xl mx-auto px-6 py-12">
