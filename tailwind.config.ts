@@ -1,1 +1,20 @@
-aW1wb3J0IHR5cGUgeyBDb25maWcgfSBmcm9tICJ0YWlsd2luZGNzcyI7Cgpjb25zdCBjb25maWc6IENvbmZpZyA9IHsKICBjb250ZW50OiBbIi4vYXBwLyoqLyoue3RzLHRzeH0iLCAiLi9jb21wb25lbnRzLyoqLyoue3RzLHRzeH0iXSwKICB0aGVtZTogewogICAgZXh0ZW5kOiB7CiAgICAgIGNvbG9yczogewogICAgICAgIHNoaWVsZDogewogICAgICAgICAgYmc6ICIjMDUwNzBkIiwKICAgICAgICAgIHBhbmVsOiAiIzBiMGYxYSIsCiAgICAgICAgICBuZW9uOiAiIzM5ZmY4OCIsCiAgICAgICAgICBjeWFuOiAiIzIyZDNlZSIsCiAgICAgICAgfSwKICAgICAgfSwKICAgIH0sCiAgfSwKICBwbHVnaW5zOiBbXSwKfTsKCmV4cG9ydCBkZWZhdWx0IGNvbmZpZzsK
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        shield: {
+          bg: "#05070d",
+          panel: "#0b0f1a",
+          neon: "#39ff88",
+          cyan: "#22d3ee",
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
