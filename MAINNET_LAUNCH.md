@@ -1,1 +1,31 @@
-IyDkuLvnvZHkuIrnur/mo4Dmn6XljZXvvIjnlKjmiLflhrPnrZbvvJrnm7TmjqXkuLvnvZHvvIzkuI3otbAgZGV2bmV077yJCgojIyAxLiDpg6jnvbLnvZHnq5kKYGBgYmFzaApjZCB+L3dvcmtzcGFjZS9zaGllbGRsYXVuY2gKIyDmjqjliLAgR2l0SHVi77yIaGFmZjk4Me+8jOmcgOeUqOaIt+aJi+WKqOW7uuS7k+W6k++8ie+8jFZlcmNlbCDlr7zlhaXvvIzkuIDplK7pg6jnvbIKIyDln5/lkI0gRE5T77yac2hpZWxkbGF1bmNoLmxpZmUg4oaSIFZlcmNlbO+8iFNwYWNlc2hpcCDlkI7lj7DliqDorrDlvZXvvIkKYGBgCgojIyAyLiDlu7ogMTAg5LiqIGNvbmZpZ++8iOavj+ahoyAw4oCTOSUg5ZCE5LiA5Liq77yJCi0g5Zyo572R56uZ77yI5oiW6ISa5pys77yJ6LCD55SoIGBidWlsZENyZWF0ZUNvbmZpZ1R4YO+8jOavj+aho+S4gOasoQotIOavj+asoee6piAwLjAwNiBTT0zvvIwxMCDkuKrnuqYgMC4wNiBTT0zvvIzlv4XpobvnlKgqKui0uemSseWMhSoq562+5ZCNCi0g5q+P5bu65aW95LiA5Liq77yM5oqK5Zyw5Z2A5aGr5YWlIGBsaWIvY29uc3RhbnRzLnRzYCDihpIgYFBMQVRGT1JNX0NPTkZJR1NfTUFJTk5FVGAKLSDimqDvuI8gY29uZmlnIOW7uuWlveS4jeWPr+aUue+8jOWPguaVsO+8iOabsue6vy/pmIjlgLwv6LS5546H77yJ5bu65LmL5YmN6YCQ5Liq5qC45a+5CgojIyAzLiDlj5HlsITnrKzkuIDkuKrluIEKLSBgL2xhdW5jaGAg5aGr5ZCN56ewL3RpY2tlcu+8jOmAieWIhuaIkOaho+S9je+8jOWGs+WumuaYr+WQpueHg+eDpyBMUAotIOetvuWQjSDihpIg5Li7572R55yf5a6eIFNPTCDmtojogJcKLSAqKueri+WNsyByZW5vdW5jZSoqIG1pbnQgYXV0aG9yaXR5ICsgZnJlZXplIGF1dGhvcml0eQotIOWIsCBHTUdOIOeymOi0tCBtaW50IOWcsOWdgO+8jOmqjOivgeiiq+aNleaNie+8iG5ld19wYWlycyAvIOaQnOe0ou+8iQoKIyMgNC4g6aqM6K+B6LS555So5b2S6ZuGCi0g5om+5Yeg5Liq6ZKx5YyF5YGa5Yeg56yU5Lmw5Y2WCi0g6LCDIGBidWlsZENsYWltRmVlVHhg77yM56Gu6K6k6LS56ZKx5YyF6IO96aKG5YiwIFNPTAoKIyMg5b6F57K+566X77yI5LiK57q/5YmN77yJCi0gWyBdIGBzcXJ0U3RhcnRQcmljZWAgLyBjdXJ2Ze+8mueUqCBTREsgYGJ1aWxkQ3VydmVXaXRoTWFya2V0Q2FwYCDmjInnm67moIflvIDnm5jluILlgLznlJ/miJAKLSBbIF0gYG1pZ3JhdGlvblF1b3RlVGhyZXNob2xkYO+8mn4xNSBTT0wg5oyJ5b2T5YmNIFNPTCDku7fmoLzlpI3moLjvvIjlr7nmoIcgZ29tbyAkMTVrIOavleS4mu+8iQotIFsgXSDkuLvnvZEgUlBD77yaSGVsaXVzIOWFjei0uSBrZXnvvIhgTkVYVF9QVUJMSUNfTUFJTk5FVF9SUENg77yJCi0gWyBdIG1ldGFkYXRhIOWtmOWCqO+8muWbvueJhyArIEpTT04g5LiKIElyeXMvQXJ3ZWF2ZQotIFsgXSBgYnVpbGRCdXJuTHBUeGDvvJrov4Hnp7vogZTosIPlkI7lrp7njrAK
+# 主网上线检查单（用户决策：直接主网，不走 devnet）
+
+## 1. 部署网站
+```bash
+cd ~/workspace/shieldlaunch
+# 推到 GitHub（haff981，需用户手动建仓库），Vercel 导入，一键部署
+# 域名 DNS：shieldlaunch.life → Vercel（Spaceship 后台加记录）
+```
+
+## 2. 建 10 个 config（每档 0–9% 各一个）
+- 在网站（或脚本）调用 `buildCreateConfigTx`，每档一次
+- 每次约 0.006 SOL，10 个约 0.06 SOL，必须用**费钱包**签名
+- 每建好一个，把地址填入 `lib/constants.ts` → `PLATFORM_CONFIGS_MAINNET`
+- ⚠️ config 建好不可改，参数（曲线/阈值/费率）建之前逐个核对
+
+## 3. 发射第一个币
+- `/launch` 填名称/ticker，选分成档位，决定是否燃烧 LP
+- 签名 → 主网真实 SOL 消耗
+- **立即 renounce** mint authority + freeze authority
+- 到 GMGN 粘贴 mint 地址，验证被捕捉（new_pairs / 搜索）
+
+## 4. 验证费用归集
+- 找几个钱包做几笔买卖
+- 调 `buildClaimFeeTx`，确认费钱包能领到 SOL
+
+## 待精算（上线前）
+- [ ] `sqrtStartPrice` / curve：用 SDK `buildCurveWithMarketCap` 按目标开盘市值生成
+- [ ] `migrationQuoteThreshold`：~15 SOL 按当前 SOL 价格复核（对标 gomo $15k 毕业）
+- [ ] 主网 RPC：Helius 免费 key（`NEXT_PUBLIC_MAINNET_RPC`）
+- [ ] metadata 存储：图片 + JSON 上 Irys/Arweave
+- [ ] `buildBurnLpTx`：迁移联调后实现
