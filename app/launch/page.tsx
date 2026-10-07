@@ -4,21 +4,31 @@ import { useState } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import TopNav from "@/components/TopNav";
 import StatusBar from "@/components/StatusBar";
+import ImageDropzone from "@/components/ImageDropzone";
 import { buildCreatePoolTx, FEE_TIERS } from "@/lib/meteora";
+import { getIrys, ensureFunded, uploadImage, uploadMetadata } from "@/lib/irys";
+import { MAINNET_RPC } from "@/lib/constants";
 
 export default function LaunchPage() {
   const { connection } = useConnection();
-  const { publicKey, sendTransaction } = useWallet();
+  const wallet = useWallet();
+  const { publicKey, sendTransaction } = wallet;
   const [name, setName] = useState("");
   const [symbol, setSymbol] = useState("");
   const [desc, setDesc] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [tier, setTier] = useState(5);
   const [burnLp, setBurnLp] = useState(false);
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
 
   const fee = FEE_TIERS[tier];
+
+  function handleImage(f: File | null) {
+    setImageFile(f);
+    setImagePreview(f ? URL.createObjectURL(f) : null);
+  }
 
   async function handleLaunch() {
     if (!publicKey) {
@@ -29,10 +39,34 @@ export default function LaunchPage() {
       setStatus("请填写名称和 ticker");
       return;
     }
+    const adapter = wallet.wallet?.adapter;
+    if (!adapter || !("signMessage" in adapter)) {
+      setStatus("当前钱包不支持签名，换 Phantom / Solflare 再试");
+      return;
+    }
     setBusy(true);
-    setStatus("组装交易中…（主网，真实 SOL）");
     try {
-      const uri = "https://shieldlaunch.life/api/metadata/placeholder.json";
+      // 1. 图片 + metadata 上传到 Irys（永久存储）
+      setStatus("上传图片到 Irys 永久存储…");
+      const rpcUrl = process.env.NEXT_PUBLIC_MAINNET_RPC || MAINNET_RPC;
+      const irys = await getIrys(adapter as never, rpcUrl);
+      let imageUrl = "";
+      if (imageFile) {
+        const metaBytes = 1024; // metadata JSON 预估
+        await ensureFunded(irys, imageFile.size + metaBytes);
+        setStatus("图片上传中…（如需充值会请你签名一次）");
+        imageUrl = await uploadImage(irys, imageFile);
+      }
+      setStatus("上传代币信息…");
+      const metadataUri = await uploadMetadata(irys, {
+        name,
+        symbol: symbol.toUpperCase(),
+        description: desc,
+        image: imageUrl,
+      });
+
+      // 2. 组装并发射
+      setStatus("组装交易中…（主网，真实 SOL）");
       const { tx, baseMint } = await buildCreatePoolTx({
         connection,
         payer: publicKey,
@@ -40,7 +74,7 @@ export default function LaunchPage() {
         tier,
         name,
         symbol: symbol.toUpperCase(),
-        uri,
+        uri: metadataUri,
         burnLp,
       });
       setStatus("请在钱包中签名…（主网交易，谨慎确认）");
@@ -81,27 +115,10 @@ export default function LaunchPage() {
             <div className="space-y-5">
               <div>
                 <label className="text-sm font-extrabold text-shield-ink">Coin logo</label>
-                <div className="flex gap-4 mt-2">
-                  <div className="w-24 h-24 shrink-0 rounded-2xl bg-shield-bg border-2 border-dashed border-shield-line flex items-center justify-center overflow-hidden">
-                    {imageUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={imageUrl} alt="" className="w-24 h-24 object-cover" />
-                    ) : (
-                      <span className="text-2xl">🖼️</span>
-                    )}
-                  </div>
-                  <div className="flex-1">
-                    <input
-                      value={imageUrl}
-                      onChange={(e) => setImageUrl(e.target.value)}
-                      placeholder="粘贴图片直链 https://…"
-                      className={inputCls + " text-sm"}
-                    />
-                    <p className="text-xs text-shield-muted mt-1">
-                      发推时传图，复制图片地址粘这里（JPG/PNG/GIF/WebP）
-                    </p>
-                  </div>
-                </div>
+                <p className="text-xs text-shield-muted mb-2">
+                  Square PNG, JPG, WEBP or GIF, 512px or more, up to 5 MB. 发射时永久存到 Arweave。
+                </p>
+                <ImageDropzone file={imageFile} onChange={handleImage} />
               </div>
 
               <div>
@@ -242,9 +259,9 @@ export default function LaunchPage() {
               </div>
               <div className="bg-white rounded-2xl border border-shield-line overflow-hidden">
                 <div className="h-24 bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center">
-                  {imageUrl ? (
+                  {imagePreview ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={imageUrl} alt="" className="h-20 w-20 rounded-2xl object-cover border-4 border-white shadow" />
+                    <img src={imagePreview} alt="" className="h-20 w-20 rounded-2xl object-cover border-4 border-white shadow" />
                   ) : (
                     <div className="h-20 w-20 rounded-2xl bg-amber-400 border-4 border-white shadow flex items-center justify-center text-white font-extrabold text-xl">
                       {(symbol || "GO").slice(0, 2).toUpperCase()}

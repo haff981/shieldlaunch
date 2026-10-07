@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@irys/sdk": "^0.2.11",
     "@meteora-ag/dynamic-bonding-curve-sdk": "^1.5.11",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-phantom": "^0.9.30",
