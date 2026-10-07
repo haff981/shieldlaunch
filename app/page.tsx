@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletButton } from "@/components/WalletButton";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
           <Link href="/launch" className="text-sm text-white/70 hover:text-white">
             发币
           </Link>
-          <WalletMultiButton />
+          <WalletButton />
         </div>
       </nav>
 
