@@ -1,1 +1,240 @@
-LyoqCiAqIE1ldGVvcmEgRHluYW1pYyBCb25kaW5nIEN1cnZlIOmbhuaIkAogKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KICogU0RLOiBAbWV0ZW9yYS1hZy9keW5hbWljLWJvbmRpbmctY3VydmUtc2RrICheMS41LjExKQogKgogKiDotLnnlKjmqKHlnovvvIjlr7nmoIcgZ29tb++8jDEwIOaho++8ie+8mgogKiAtIOW5s+WPsOS4uuavj+S4gOahoyBjcmVhdG9yIOWIhuaIkO+8iDDigJM5Je+8ieWQhOW7uuS4gOS4qiBjb25maWfvvIzlhbEgMTAg5LiqCiAqIC0g5q+P5LiqIGNvbmZpZyDnmoQgZmVlQ2xhaW1lciA9IFBMQVRGT1JNX0ZFRV9XQUxMRVTvvIjlubPlj7DpkrHljIXvvIkKICogLSDmgLvotLnnjoflhazlvI/vvJp0b3RhbCA9IChjcmVhdG9yJSArIOW5s+WPsCAxJSkgLyAwLjgKICogICDvvIhNZXRlb3JhIOWNj+iuruaKvSAyMCXvvIzlt7LnlKggZ29tbyDlhazlvIDmlbDmja7lj43mjqjpqozor4HvvJoKICogICAgMCUg5qGjIOKGkiAxLjI1Je+8jDUlIOahoyDihpIgNy41Je+8jDklIOahoyDihpIgMTIuNSUg4pyT77yJCiAqIC0gY3JlYXRvclRyYWRpbmdGZWVQZXJjZW50YWdl77yIdTjvvIww4oCTMTAw77yJPSBjcmVhdG9yIOWcqOmdnuWNj+iurui0ueS4reeahOWNoOavlAogKgogKiDnlKjmiLflhrPnrZbvvIgyMDI2LTEwLTA377yJ77ya55u05o6l5LiK5Li7572R77yM5LiN6LWwIGRldm5ldOOAggogKiDmr4/kuKogY29uZmlnIOWIm+W7uue6piAwLjAwNiBTT0wg56ef6YeRIMOXIDEwID0g57qmIDAuMDYgU09M77yM5LiA5qyh5oCn44CCCiAqLwoKaW1wb3J0IHsgQ29ubmVjdGlvbiwgS2V5cGFpciwgUHVibGljS2V5LCBUcmFuc2FjdGlvbiB9IGZyb20gIkBzb2xhbmEvd2ViMy5qcyI7CmltcG9ydCB7IER5bmFtaWNCb25kaW5nQ3VydmVDbGllbnQsIHR5cGUgQ3JlYXRlUG9vbFBhcmFtcyB9IGZyb20gIkBtZXRlb3JhLWFnL2R5bmFtaWMtYm9uZGluZy1jdXJ2ZS1zZGsiOwppbXBvcnQgQk4gZnJvbSAiYm4uanMiOwppbXBvcnQgewogIERCQ19QUk9HUkFNX0lELAogIE1BSU5ORVRfUlBDLAogIFBMQVRGT1JNX0NPTkZJR1NfTUFJTk5FVCwKICBQTEFURk9STV9GRUVfV0FMTEVULAogIFdTT0xfTUlOVCwKICBJTkNJTkVSQVRPUiwKfSBmcm9tICIuL2NvbnN0YW50cyI7CgpleHBvcnQgdHlwZSBOZXR3b3JrID0gIm1haW5uZXQiOyAvLyDnlKjmiLflhrPnrZbvvJrnm7TmjqXkuLvnvZEKCmV4cG9ydCBmdW5jdGlvbiBnZXRDb25uZWN0aW9uKCk6IENvbm5lY3Rpb24gewogIGNvbnN0IGVuZHBvaW50ID0gcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfTUFJTk5FVF9SUEMgfHwgTUFJTk5FVF9SUEM7CiAgcmV0dXJuIG5ldyBDb25uZWN0aW9uKGVuZHBvaW50LCAiY29uZmlybWVkIik7Cn0KCmV4cG9ydCBmdW5jdGlvbiBnZXRDbGllbnQoY29ubmVjdGlvbjogQ29ubmVjdGlvbik6IER5bmFtaWNCb25kaW5nQ3VydmVDbGllbnQgewogIHJldHVybiBuZXcgRHluYW1pY0JvbmRpbmdDdXJ2ZUNsaWVudChjb25uZWN0aW9uLCAiY29uZmlybWVkIik7Cn0KCi8qKiAxMCDmoaPotLnnjofvvIhnb21vIOWQjOasvuaVsOWtpu+8iSAqLwpleHBvcnQgaW50ZXJmYWNlIEZlZVRpZXIgewogIHRpZXI6IG51bWJlcjsgLy8g5Y+R5biB5Lq65YiG5oiQ5qGj5L2NIDDigJM5CiAgY3JlYXRvclBjdDogbnVtYmVyOyAvLyDlj5HluIHkurrmi7/otbDkuqTmmJPpop3nmoQgJQogIHBsYXRmb3JtUGN0OiBudW1iZXI7IC8vIOW5s+WPsOaLv+i1sOS6pOaYk+mineeahCAl77yI5Zu65a6aIH4xJe+8iQogIHByb3RvY29sUGN0OiBudW1iZXI7IC8vIE1ldGVvcmEg5Y2P6K6uIDIwJQogIHRvdGFsRmVlUGN0OiBudW1iZXI7IC8vIOaxoOWtkOaAu+i0ueeOhwogIGNsaWZmRmVlTnVtZXJhdG9yOiBCTjsgLy8g5oC76LS5546HIOKGkiBTREsg5YiG5a2Q77yIRkVFX0RFTk9NSU5BVE9SPTFlOe+8iQogIGNyZWF0b3JTaGFyZVU4OiBudW1iZXI7IC8vIGNyZWF0b3JUcmFkaW5nRmVlUGVyY2VudGFnZe+8iHU477yJCn0KCmZ1bmN0aW9uIGJ1aWxkVGllcih0aWVyOiBudW1iZXIpOiBGZWVUaWVyIHsKICBjb25zdCBjcmVhdG9yUGN0ID0gdGllcjsKICBjb25zdCBwbGF0Zm9ybVBjdCA9IDE7CiAgY29uc3QgdG90YWxGZWVQY3QgPSAoY3JlYXRvclBjdCArIHBsYXRmb3JtUGN0KSAvIDAuODsKICByZXR1cm4gewogICAgdGllciwKICAgIGNyZWF0b3JQY3QsCiAgICBwbGF0Zm9ybVBjdCwKICAgIHByb3RvY29sUGN0OiAyMCwKICAgIHRvdGFsRmVlUGN0LAogICAgY2xpZmZGZWVOdW1lcmF0b3I6IG5ldyBCTihNYXRoLnJvdW5kKHRvdGFsRmVlUGN0ICogMWU3KS50b1N0cmluZygpKSwKICAgIGNyZWF0b3JTaGFyZVU4OgogICAgICBjcmVhdG9yUGN0ID09PSAwID8gMCA6IE1hdGgucm91bmQoKGNyZWF0b3JQY3QgLyAoY3JlYXRvclBjdCArIHBsYXRmb3JtUGN0KSkgKiAxMDApLAogIH07Cn0KCmV4cG9ydCBjb25zdCBGRUVfVElFUlM6IEZlZVRpZXJbXSA9IEFycmF5LmZyb20oeyBsZW5ndGg6IDEwIH0sIChfLCBpKSA9PiBidWlsZFRpZXIoaSkpOwoKZXhwb3J0IGZ1bmN0aW9uIGdldFBsYXRmb3JtQ29uZmlnKHRpZXI6IG51bWJlcik6IFB1YmxpY0tleSB7CiAgY29uc3QgYWRkciA9IFBMQVRGT1JNX0NPTkZJR1NfTUFJTk5FVFt0aWVyXTsKICBpZiAoIWFkZHIgfHwgYWRkciA9PT0gIjExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExIikgewogICAgdGhyb3cgbmV3IEVycm9yKGDnrKwgJHt0aWVyfSUg5qGj55qEIGNvbmZpZyDov5jmsqHliJvlu7rvvIzor7flhYjlu7ogY29uZmlnYCk7CiAgfQogIHJldHVybiBuZXcgUHVibGljS2V5KGFkZHIpOwp9CgovKioKICog5bu6IGNvbmZpZ++8iOavj+aho+S4gOasoe+8jOWFsSAxMCDmrKHvvIzmr4/mrKHnuqYgMC4wMDYgU09M77yJCiAqIOW/hemhu+eUseeUqOaIt+mSseWMheetvuWQjeOAgmNvbmZpZyDlu7rlpb3lkI7miorlnLDlnYDloavlhaUgY29uc3RhbnRzIOKGkiBQTEFURk9STV9DT05GSUdTX01BSU5ORVQKICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBidWlsZENyZWF0ZUNvbmZpZ1R4KHBhcmFtczogewogIGNvbm5lY3Rpb246IENvbm5lY3Rpb247CiAgcGF5ZXI6IFB1YmxpY0tleTsKICB0aWVyOiBudW1iZXI7Cn0pOiBQcm9taXNlPHsgdHg6IFRyYW5zYWN0aW9uOyBjb25maWdLZXlwYWlyOiBLZXlwYWlyIH0+IHsKICBjb25zdCB7IGNvbm5lY3Rpb24sIHBheWVyLCB0aWVyIH0gPSBwYXJhbXM7CiAgaWYgKHRpZXIgPCAwIHx8IHRpZXIgPiA5KSB0aHJvdyBuZXcgRXJyb3IoInRpZXIg5b+F6aG75pivIDDigJM5Iik7CiAgY29uc3QgZmVlID0gRkVFX1RJRVJTW3RpZXJdOwogIGNvbnN0IGNsaWVudCA9IGdldENsaWVudChjb25uZWN0aW9uKTsKICBjb25zdCBjb25maWdLZXlwYWlyID0gS2V5cGFpci5nZW5lcmF0ZSgpOwoKICBjb25zdCB0eDogVHJhbnNhY3Rpb24gPSBhd2FpdCBjbGllbnQucGFydG5lci5jcmVhdGVDb25maWcoewogICAgcGF5ZXIsCiAgICBjb25maWc6IGNvbmZpZ0tleXBhaXIucHVibGljS2V5LAogICAgZmVlQ2xhaW1lcjogUExBVEZPUk1fRkVFX1dBTExFVCwgLy8g4piFIOW5s+WPsOi0ueW9kumbhuWIsOeUqOaIt+mSseWMhQogICAgbGVmdG92ZXJSZWNlaXZlcjogUExBVEZPUk1fRkVFX1dBTExFVCwKICAgIHF1b3RlTWludDogV1NPTF9NSU5ULCAvLyBTT0wg5pys5L2NCiAgICBwb29sRmVlczogewogICAgICBiYXNlRmVlOiB7CiAgICAgICAgY2xpZmZGZWVOdW1lcmF0b3I6IGZlZS5jbGlmZkZlZU51bWVyYXRvciwKICAgICAgICBudW1iZXJPZlBlcmlvZDogMCwKICAgICAgICByZWR1Y3Rpb25GYWN0b3I6IG5ldyBCTigiMCIpLAogICAgICAgIHBlcmlvZEZyZXF1ZW5jeTogbmV3IEJOKCIwIiksCiAgICAgICAgZmVlU2NoZWR1bGVyTW9kZTogMCwKICAgICAgfSwKICAgICAgZHluYW1pY0ZlZTogewogICAgICAgIGJpblN0ZXA6IDEsCiAgICAgICAgYmluU3RlcFUxMjg6IG5ldyBCTigiMTg0NDY3NDQwNzM3MDk1NSIpLAogICAgICAgIGZpbHRlclBlcmlvZDogMTAsCiAgICAgICAgZGVjYXlQZXJpb2Q6IDEyMCwKICAgICAgICByZWR1Y3Rpb25GYWN0b3I6IDEwMDAsCiAgICAgICAgdmFyaWFibGVGZWVDb250cm9sOiAxMDAwMDAsCiAgICAgICAgbWF4Vm9sYXRpbGl0eUFjY3VtdWxhdG9yOiAxMDAwMDAsCiAgICAgIH0sCiAgICB9LAogICAgYWN0aXZhdGlvblR5cGU6IDAsCiAgICBjb2xsZWN0RmVlTW9kZTogMCwgLy8g5Y+q5pS2IFNPTCDotLnnlKgKICAgIG1pZ3JhdGlvbk9wdGlvbjogMCwgLy8g5q+V5Lia6L+B56e7IERBTU0gdjIKICAgIHRva2VuVHlwZTogMCwKICAgIHRva2VuRGVjaW1hbDogNiwgLy8gNiDkvY3lsI/mlbDvvIhnb21vIOWQjOasvu+8iQogICAgbWlncmF0aW9uUXVvdGVUaHJlc2hvbGQ6IG5ldyBCTigiMTUwMDAwMDAwMDAiKSwgLy8gfjE1IFNPTO+8jOaMiSBnb21vIOe6piAkMTVrIOW4guWAvOavleS4muaAnei3r++8m1NPTCDku7fmoLzms6Lliqjml7blpI3moLgKICAgIHBhcnRuZXJMcFBlcmNlbnRhZ2U6IDAsCiAgICBjcmVhdG9yTHBQZXJjZW50YWdlOiAwLAogICAgcGFydG5lckxvY2tlZExwUGVyY2VudGFnZTogNTAsIC8vIOavleS4muWQjiBMUCDmsLjkuYXplIHlrprvvIjpmLLot5Hot6/ljZbngrnvvIkKICAgIGNyZWF0b3JMb2NrZWRMcFBlcmNlbnRhZ2U6IDUwLAogICAgc3FydFN0YXJ0UHJpY2U6IG5ldyBCTigiNTgzMzM3MjY2ODcxMzUxNTgiKSwgLy8gVE9ETzog55SoIGJ1aWxkQ3VydmVXaXRoTWFya2V0Q2FwIOaMieebruagh+W8gOebmOW4guWAvOeyvueulwogICAgbG9ja2VkVmVzdGluZzogewogICAgICBhbW91bnRQZXJQZXJpb2Q6IG5ldyBCTigiMCIpLAogICAgICBjbGlmZkR1cmF0aW9uRnJvbU1pZ3JhdGlvblRpbWU6IG5ldyBCTigiMCIpLAogICAgICBmcmVxdWVuY3k6IG5ldyBCTigiMCIpLAogICAgICBudW1iZXJPZlBlcmlvZDogbmV3IEJOKCIwIiksCiAgICAgIGNsaWZmVW5sb2NrQW1vdW50OiBuZXcgQk4oIjAiKSwKICAgIH0sCiAgICBtaWdyYXRpb25GZWVPcHRpb246IDAsCiAgICB0b2tlblN1cHBseTogewogICAgICBwcmVNaWdyYXRpb25Ub2tlblN1cHBseTogbmV3IEJOKCIxMDAwMDAwMDAwMDAwMDAwIiksIC8vIDEwIOS6vyDDlyAxMF42CiAgICAgIHBvc3RNaWdyYXRpb25Ub2tlblN1cHBseTogbmV3IEJOKCIxMDAwMDAwMDAwMDAwMDAwIiksCiAgICB9LAogICAgY3JlYXRvclRyYWRpbmdGZWVQZXJjZW50YWdlOiBmZWUuY3JlYXRvclNoYXJlVTgsCiAgICBwYWRkaW5nMDogW10sCiAgICBwYWRkaW5nMTogW10sCiAgICBjdXJ2ZTogWwogICAgICAvLyBUT0RPOiDnlKggYnVpbGRDdXJ2ZVdpdGhNYXJrZXRDYXAg55Sf5oiQ57K+56Gu5puy57q/5ZCO5pu/5o2iCiAgICAgIHsKICAgICAgICBzcXJ0UHJpY2U6IG5ldyBCTigiMjMzMzM0OTA2NzQ4NTQwNjMxIiksCiAgICAgICAgbGlxdWlkaXR5OiBuZXcgQk4oIjYyMjIyNjQxNzk5NjEwNjQyOTIwMTAyNzgyMTYxOTY3MjcyOSIpLAogICAgICB9LAogICAgICB7CiAgICAgICAgc3FydFByaWNlOiBuZXcgQk4oIjc5MjI2NjczNTIxMDY2OTc5MjU3NTc4MjQ4MDkxIiksCiAgICAgICAgbGlxdWlkaXR5OiBuZXcgQk4oIjEiKSwKICAgICAgfSwKICAgIF0sCiAgfSBhcyBuZXZlcik7CgogIHJldHVybiB7IHR4LCBjb25maWdLZXlwYWlyIH07Cn0KCi8qKgogKiDlj5HluIHvvIjliJvlu7ogREJDIOaxoCArIG1pbnTvvIkKICogQHBhcmFtIHRpZXIg5Y+R5biB5Lq66YCJ5oup55qE5YiG5oiQ5qGj5L2NIDDigJM5CiAqIEBwYXJhbSBidXJuTHAg54eD54On6YCJ6aG577ya5byA5ZCv5ZCO77yM5q+V5Lia5pe25bCGIExQIOWHreivgei9rOWFpemUgOavgeWcsOWdgO+8iOiAjOmdnumVv+acn+mUgeS7k+Wxleekuu+8iQogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGJ1aWxkQ3JlYXRlUG9vbFR4KHBhcmFtczogewogIGNvbm5lY3Rpb246IENvbm5lY3Rpb247CiAgcGF5ZXI6IFB1YmxpY0tleTsKICBwb29sQ3JlYXRvcjogUHVibGljS2V5OwogIHRpZXI6IG51bWJlcjsKICBuYW1lOiBzdHJpbmc7CiAgc3ltYm9sOiBzdHJpbmc7CiAgdXJpOiBzdHJpbmc7CiAgYnVybkxwOiBib29sZWFuOwp9KTogUHJvbWlzZTx7IHR4OiBUcmFuc2FjdGlvbjsgYmFzZU1pbnQ6IFB1YmxpY0tleSB9PiB7CiAgY29uc3QgeyBjb25uZWN0aW9uLCBwYXllciwgcG9vbENyZWF0b3IsIHRpZXIsIG5hbWUsIHN5bWJvbCwgdXJpIH0gPSBwYXJhbXM7CiAgY29uc3QgY2xpZW50ID0gZ2V0Q2xpZW50KGNvbm5lY3Rpb24pOwogIGNvbnN0IGNvbmZpZyA9IGdldFBsYXRmb3JtQ29uZmlnKHRpZXIpOwogIGNvbnN0IGJhc2VNaW50ID0gS2V5cGFpci5nZW5lcmF0ZSgpOwoKICBjb25zdCBwb29sUGFyYW1zOiBDcmVhdGVQb29sUGFyYW1zID0gewogICAgcGF5ZXIsCiAgICBjb25maWcsCiAgICBiYXNlTWludDogYmFzZU1pbnQucHVibGljS2V5LAogICAgbmFtZSwKICAgIHN5bWJvbCwKICAgIHVyaSwKICAgIHBvb2xDcmVhdG9yLAogIH07CiAgY29uc3QgdHggPSBhd2FpdCBjbGllbnQuY3JlYXRvci5jcmVhdGVQb29sKHBvb2xQYXJhbXMpOwoKICAvLyBidXJuTHAg5oSP5Zu+6ZqP5Y+R5biB6K6w5b2V5a2YIFN1cGFiYXNl77yb5q+V5Lia6L+B56e75a6M5oiQ5ZCO55Sx5bmz5Y+w5omn6KGM54eD54OnCiAgLy8g77yI5bCG5bmz5Y+w5Lu96aKd55qEIERBTU0gdjIgTFAg5omT5YWlIElOQ0lORVJBVE9S77yM6KeBIGJ1aWxkQnVybkxwVHjvvIkKICB2b2lkIHBhcmFtcy5idXJuTHA7CgogIC8vIE5PVEU6IOWPkeaxoOWQjuWKoeW/hSByZW5vdW5jZSBtaW50IGF1dGhvcml0eSArIGZyZWV6ZSBhdXRob3JpdHnvvIwKICAvLyDlkKbliJkgR01HTi9EZXhTY3JlZW5lciDlronlhajor4TliIbmjILnuqLvvIzlvbHlk43ooqvmjZXmjYnlkozkvKDmkq3jgIIKICByZXR1cm4geyB0eCwgYmFzZU1pbnQ6IGJhc2VNaW50LnB1YmxpY0tleSB9Owp9CgovKioKICog54eD54OnIExQ77yI5q+V5Lia6L+B56e75a6M5oiQ5ZCO5omn6KGM77yJCiAqIOWwhuaMh+WumuaVsOmHj+eahCBEQU1NIHYyIExQIHRva2VuIOi9rOWFpSBTb2xhbmEg6ZSA5q+B5Zyw5Z2A44CCCiAqIOeUsei0uemSseWMhe+8iOeUqOaIt++8ieetvuWQjeWPkei1t+OAggogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGJ1aWxkQnVybkxwVHgoX3BhcmFtczogewogIGNvbm5lY3Rpb246IENvbm5lY3Rpb247CiAgcGF5ZXI6IFB1YmxpY0tleTsKICBscE1pbnQ6IFB1YmxpY0tleTsKICBhbW91bnQ6IEJOOwp9KTogUHJvbWlzZTxUcmFuc2FjdGlvbj4gewogIC8vIFRPRE86IOi/geenu+a1geeoi+iBlOiwg+aXtuWunueOsCDigJTigJQg5LuO55So5oi3IExQIOi0puaIt+i9rOi0puWIsCBJTkNJTkVSQVRPUuOAggogIC8vIOmcgOWFiOehruiupCBEQU1NIHYyIOi/geenu+WQjiBMUCBtaW50IOWcsOWdgOS4jueUqOaIt+aMgeS7k+i0puaIt+OAggogIHZvaWQgX3BhcmFtczsKICB0aHJvdyBuZXcgRXJyb3IoImJ1aWxkQnVybkxwVHgg5b6F6L+B56e76IGU6LCD5ZCO5a6e546wIik7Cn0KCi8qKgogKiDlubPlj7DpoobotLnvvIhmZWVDbGFpbWVyID0g55So5oi36ZKx5YyF77yM55Sx55So5oi3562+5ZCN5Y+R6LW377yM5Y+v6ZqP5pe26aKG77yJCiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gYnVpbGRDbGFpbUZlZVR4KHBhcmFtczogewogIGNvbm5lY3Rpb246IENvbm5lY3Rpb247CiAgcG9vbDogUHVibGljS2V5OwogIHBheWVyOiBQdWJsaWNLZXk7CiAgcmVjZWl2ZXI/OiBQdWJsaWNLZXk7Cn0pOiBQcm9taXNlPFRyYW5zYWN0aW9uPiB7CiAgY29uc3QgeyBjb25uZWN0aW9uLCBwb29sLCBwYXllciwgcmVjZWl2ZXIgfSA9IHBhcmFtczsKICBjb25zdCBjbGllbnQgPSBnZXRDbGllbnQoY29ubmVjdGlvbik7CgogIGNvbnN0IHR4ID0gYXdhaXQgY2xpZW50LnBhcnRuZXIuY2xhaW1QYXJ0bmVyVHJhZGluZ0ZlZSh7CiAgICBwb29sLAogICAgZmVlQ2xhaW1lcjogUExBVEZPUk1fRkVFX1dBTExFVCwKICAgIHBheWVyLAogICAgbWF4QmFzZUFtb3VudDogbmV3IEJOKDApLAogICAgbWF4UXVvdGVBbW91bnQ6IG5ldyBCTigwKSwKICAgIHJlY2VpdmVyOiByZWNlaXZlciA/PyBQTEFURk9STV9GRUVfV0FMTEVULAogIH0gYXMgbmV2ZXIpOwoKICByZXR1cm4gdHggYXMgVHJhbnNhY3Rpb247Cn0KCmV4cG9ydCB7IERCQ19QUk9HUkFNX0lELCBJTkNJTkVSQVRPUiB9Owo=
+/**
+ * Meteora Dynamic Bonding Curve 集成
+ * ============================================================
+ * SDK: @meteora-ag/dynamic-bonding-curve-sdk (^1.5.11)
+ *
+ * 费用模型（对标 gomo，10 档）：
+ * - 平台为每一档 creator 分成（0–9%）各建一个 config，共 10 个
+ * - 每个 config 的 feeClaimer = PLATFORM_FEE_WALLET（平台钱包）
+ * - 总费率公式：total = (creator% + 平台 1%) / 0.8
+ *   （Meteora 协议抽 20%，已用 gomo 公开数据反推验证：
+ *    0% 档 → 1.25%，5% 档 → 7.5%，9% 档 → 12.5% ✓）
+ * - creatorTradingFeePercentage（u8，0–100）= creator 在非协议费中的占比
+ *
+ * 用户决策（2026-10-07）：直接上主网，不走 devnet。
+ * 每个 config 创建约 0.006 SOL 租金 × 10 = 约 0.06 SOL，一次性。
+ */
+
+import { Connection, Keypair, PublicKey, Transaction } from "@solana/web3.js";
+import { DynamicBondingCurveClient, type CreatePoolParams } from "@meteora-ag/dynamic-bonding-curve-sdk";
+import BN from "bn.js";
+import {
+  DBC_PROGRAM_ID,
+  MAINNET_RPC,
+  PLATFORM_CONFIGS_MAINNET,
+  PLATFORM_FEE_WALLET,
+  WSOL_MINT,
+  INCINERATOR,
+} from "./constants";
+
+export type Network = "mainnet"; // 用户决策：直接主网
+
+export function getConnection(): Connection {
+  const endpoint = process.env.NEXT_PUBLIC_MAINNET_RPC || MAINNET_RPC;
+  return new Connection(endpoint, "confirmed");
+}
+
+export function getClient(connection: Connection): DynamicBondingCurveClient {
+  return new DynamicBondingCurveClient(connection, "confirmed");
+}
+
+/** 10 档费率（gomo 同款数学） */
+export interface FeeTier {
+  tier: number; // 发币人分成档位 0–9
+  creatorPct: number; // 发币人拿走交易额的 %
+  platformPct: number; // 平台拿走交易额的 %（固定 ~1%）
+  protocolPct: number; // Meteora 协议 20%
+  totalFeePct: number; // 池子总费率
+  cliffFeeNumerator: BN; // 总费率 → SDK 分子（FEE_DENOMINATOR=1e9）
+  creatorShareU8: number; // creatorTradingFeePercentage（u8）
+}
+
+function buildTier(tier: number): FeeTier {
+  const creatorPct = tier;
+  const platformPct = 1;
+  const totalFeePct = (creatorPct + platformPct) / 0.8;
+  return {
+    tier,
+    creatorPct,
+    platformPct,
+    protocolPct: 20,
+    totalFeePct,
+    cliffFeeNumerator: new BN(Math.round(totalFeePct * 1e7).toString()),
+    creatorShareU8:
+      creatorPct === 0 ? 0 : Math.round((creatorPct / (creatorPct + platformPct)) * 100),
+  };
+}
+
+export const FEE_TIERS: FeeTier[] = Array.from({ length: 10 }, (_, i) => buildTier(i));
+
+export function getPlatformConfig(tier: number): PublicKey {
+  const addr = PLATFORM_CONFIGS_MAINNET[tier];
+  if (!addr || addr === "11111111111111111111111111111111") {
+    throw new Error(`第 ${tier}% 档的 config 还没创建，请先建 config`);
+  }
+  return new PublicKey(addr);
+}
+
+/**
+ * 建 config（每档一次，共 10 次，每次约 0.006 SOL）
+ * 必须由用户钱包签名。config 建好后把地址填入 constants → PLATFORM_CONFIGS_MAINNET
+ */
+export async function buildCreateConfigTx(params: {
+  connection: Connection;
+  payer: PublicKey;
+  tier: number;
+}): Promise<{ tx: Transaction; configKeypair: Keypair }> {
+  const { connection, payer, tier } = params;
+  if (tier < 0 || tier > 9) throw new Error("tier 必须是 0–9");
+  const fee = FEE_TIERS[tier];
+  const client = getClient(connection);
+  const configKeypair = Keypair.generate();
+
+  const tx: Transaction = await client.partner.createConfig({
+    payer,
+    config: configKeypair.publicKey,
+    feeClaimer: PLATFORM_FEE_WALLET, // ★ 平台费归集到用户钱包
+    leftoverReceiver: PLATFORM_FEE_WALLET,
+    quoteMint: WSOL_MINT, // SOL 本位
+    poolFees: {
+      baseFee: {
+        cliffFeeNumerator: fee.cliffFeeNumerator,
+        numberOfPeriod: 0,
+        reductionFactor: new BN("0"),
+        periodFrequency: new BN("0"),
+        feeSchedulerMode: 0,
+      },
+      dynamicFee: {
+        binStep: 1,
+        binStepU128: new BN("1844674407370955"),
+        filterPeriod: 10,
+        decayPeriod: 120,
+        reductionFactor: 1000,
+        variableFeeControl: 100000,
+        maxVolatilityAccumulator: 100000,
+      },
+    },
+    activationType: 0,
+    collectFeeMode: 0, // 只收 SOL 费用
+    migrationOption: 0, // 毕业迁移 DAMM v2
+    tokenType: 0,
+    tokenDecimal: 6, // 6 位小数（gomo 同款）
+    migrationQuoteThreshold: new BN("15000000000"), // ~15 SOL，按 gomo 约 $15k 市值毕业思路；SOL 价格波动时复核
+    partnerLpPercentage: 0,
+    creatorLpPercentage: 0,
+    partnerLockedLpPercentage: 50, // 毕业后 LP 永久锁定（防跑路卖点）
+    creatorLockedLpPercentage: 50,
+    sqrtStartPrice: new BN("58333726687135158"), // TODO: 用 buildCurveWithMarketCap 按目标开盘市值精算
+    lockedVesting: {
+      amountPerPeriod: new BN("0"),
+      cliffDurationFromMigrationTime: new BN("0"),
+      frequency: new BN("0"),
+      numberOfPeriod: new BN("0"),
+      cliffUnlockAmount: new BN("0"),
+    },
+    migrationFeeOption: 0,
+    tokenSupply: {
+      preMigrationTokenSupply: new BN("1000000000000000"), // 10 亿 × 10^6
+      postMigrationTokenSupply: new BN("1000000000000000"),
+    },
+    creatorTradingFeePercentage: fee.creatorShareU8,
+    padding0: [],
+    padding1: [],
+    curve: [
+      // TODO: 用 buildCurveWithMarketCap 生成精确曲线后替换
+      {
+        sqrtPrice: new BN("233334906748540631"),
+        liquidity: new BN("622226417996106429201027821619672729"),
+      },
+      {
+        sqrtPrice: new BN("79226673521066979257578248091"),
+        liquidity: new BN("1"),
+      },
+    ],
+  } as never);
+
+  return { tx, configKeypair };
+}
+
+/**
+ * 发币（创建 DBC 池 + mint）
+ * @param tier 发币人选择的分成档位 0–9
+ * @param burnLp 燃烧选项：开启后，毕业时将 LP 凭证转入销毁地址（而非长期锁仓展示）
+ */
+export async function buildCreatePoolTx(params: {
+  connection: Connection;
+  payer: PublicKey;
+  poolCreator: PublicKey;
+  tier: number;
+  name: string;
+  symbol: string;
+  uri: string;
+  burnLp: boolean;
+}): Promise<{ tx: Transaction; baseMint: PublicKey }> {
+  const { connection, payer, poolCreator, tier, name, symbol, uri } = params;
+  const client = getClient(connection);
+  const config = getPlatformConfig(tier);
+  const baseMint = Keypair.generate();
+
+  const poolParams: CreatePoolParams = {
+    payer,
+    config,
+    baseMint: baseMint.publicKey,
+    name,
+    symbol,
+    uri,
+    poolCreator,
+  };
+  const tx = await client.creator.createPool(poolParams);
+
+  // burnLp 意图随发币记录存 Supabase；毕业迁移完成后由平台执行燃烧
+  // （将平台份额的 DAMM v2 LP 打入 INCINERATOR，见 buildBurnLpTx）
+  void params.burnLp;
+
+  // NOTE: 发池后务必 renounce mint authority + freeze authority，
+  // 否则 GMGN/DexScreener 安全评分挂红，影响被捕捉和传播。
+  return { tx, baseMint: baseMint.publicKey };
+}
+
+/**
+ * 燃烧 LP（毕业迁移完成后执行）
+ * 将指定数量的 DAMM v2 LP token 转入 Solana 销毁地址。
+ * 由费钱包（用户）签名发起。
+ */
+export async function buildBurnLpTx(_params: {
+  connection: Connection;
+  payer: PublicKey;
+  lpMint: PublicKey;
+  amount: BN;
+}): Promise<Transaction> {
+  // TODO: 迁移流程联调时实现 —— 从用户 LP 账户转账到 INCINERATOR。
+  // 需先确认 DAMM v2 迁移后 LP mint 地址与用户持仓账户。
+  void _params;
+  throw new Error("buildBurnLpTx 待迁移联调后实现");
+}
+
+/**
+ * 平台领费（feeClaimer = 用户钱包，由用户签名发起，可随时领）
+ */
+export async function buildClaimFeeTx(params: {
+  connection: Connection;
+  pool: PublicKey;
+  payer: PublicKey;
+  receiver?: PublicKey;
+}): Promise<Transaction> {
+  const { connection, pool, payer, receiver } = params;
+  const client = getClient(connection);
+
+  const tx = await client.partner.claimPartnerTradingFee({
+    pool,
+    feeClaimer: PLATFORM_FEE_WALLET,
+    payer,
+    maxBaseAmount: new BN(0),
+    maxQuoteAmount: new BN(0),
+    receiver: receiver ?? PLATFORM_FEE_WALLET,
+  } as never);
+
+  return tx as Transaction;
+}
+
+export { DBC_PROGRAM_ID, INCINERATOR };
