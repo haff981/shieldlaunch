@@ -7,111 +7,104 @@ import type { ListedToken } from "./TokenList";
 export default function TradingPanel({ token }: { token: ListedToken | null }) {
   const { publicKey } = useWallet();
   const [side, setSide] = useState<"buy" | "sell">("buy");
-  const [amount, setAmount] = useState("1");
+  const [amount, setAmount] = useState("100");
 
   const disabled = !token;
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-white/10">
-        <div className="flex gap-2">
+    <div className="flex flex-col h-full bg-white">
+      <div className="p-3">
+        <div className="flex bg-shield-bg rounded-full p-1">
           {(["buy", "sell"] as const).map((s) => (
             <button
               key={s}
               onClick={() => setSide(s)}
-              className={`flex-1 py-2 rounded-lg font-bold text-sm ${
+              className={`flex-1 py-2 rounded-full font-extrabold text-sm ${
                 side === s
-                  ? s === "buy"
-                    ? "bg-shield-neon text-black"
-                    : "bg-red-500 text-white"
-                  : "bg-white/5 text-white/40 hover:text-white/70"
+                  ? "bg-white shadow text-shield-ink"
+                  : "text-shield-muted"
               }`}
             >
-              {s === "buy" ? "买入" : "卖出"}
+              <span className={s === "buy" ? "text-green-600" : "text-red-500"}>
+                {s === "buy" ? "Buy" : "Sell"}
+              </span>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="p-4 space-y-3 flex-1">
-        <div>
-          <div className="flex justify-between text-xs text-white/40 mb-1">
-            <span>数量 (SOL)</span>
-            <span>余额：{publicKey ? "—" : "未连接"}</span>
+      <div className="px-4 pb-4 space-y-3">
+        <div className="bg-shield-bg rounded-2xl p-4">
+          <div className="text-xs text-shield-muted mb-1">Amount</div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl font-extrabold">$</span>
+            <input
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              inputMode="decimal"
+              disabled={disabled}
+              className="w-full bg-transparent text-2xl font-extrabold outline-none disabled:opacity-40 font-mono"
+              placeholder="0"
+            />
+            <span className="text-xs bg-white border border-shield-line rounded-full px-2 py-1 text-shield-muted shrink-0">
+              USD
+            </span>
           </div>
-          <input
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            inputMode="decimal"
-            disabled={disabled}
-            className="w-full bg-shield-bg border border-white/10 rounded-lg px-4 py-3 text-lg font-mono outline-none focus:border-shield-neon disabled:opacity-40"
-            placeholder="0.0"
-          />
+          <div className="text-xs text-shield-muted mt-1">
+            {disabled ? "Enter an amount" : `≈ ${(Number(amount) / 118 / (token?.priceSol || 1)).toFixed(0)} $${token?.symbol}`}
+          </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-2">
-          {["0.1", "0.5", "1", "5"].map((v) => (
+        <div className="grid grid-cols-5 gap-1.5">
+          {["10", "50", "100", "500", "Max"].map((v) => (
             <button
               key={v}
-              onClick={() => setAmount(v)}
+              onClick={() => v !== "Max" && setAmount(v)}
               disabled={disabled}
-              className="py-1.5 text-xs bg-white/5 rounded-lg text-white/60 hover:bg-white/10 disabled:opacity-40"
+              className={`py-2 text-xs font-bold rounded-xl border ${
+                amount === v
+                  ? "border-shield-primary text-shield-primary bg-blue-50"
+                  : "border-shield-line text-shield-muted bg-white"
+              } disabled:opacity-40`}
             >
-              {v}
+              {v === "Max" ? v : `$${v}`}
             </button>
           ))}
-        </div>
-
-        <div className="text-xs text-white/40">
-          ≈ {disabled ? "—" : "0"} ${token?.symbol ?? ""}
         </div>
 
         <button
           disabled={disabled}
-          className={`w-full py-3.5 rounded-xl font-bold ${
+          className={`w-full py-3.5 rounded-2xl font-extrabold ${
             disabled
-              ? "bg-white/5 text-white/30 cursor-not-allowed"
+              ? "bg-shield-bg text-shield-muted cursor-not-allowed"
               : side === "buy"
-                ? "bg-shield-neon text-black hover:opacity-90"
-                : "bg-red-500 text-white hover:opacity-90"
+                ? "bg-shield-primary text-white hover:bg-shield-primaryDark"
+                : "bg-red-500 text-white hover:bg-red-600"
           }`}
         >
-          {disabled ? "等待首个代币" : side === "buy" ? `买入 $${token?.symbol}` : `卖出 $${token?.symbol}`}
+          {disabled
+            ? "No coin selected"
+            : !publicKey
+              ? "Connect wallet to trade"
+              : side === "buy"
+                ? `Buy $${token?.symbol}`
+                : `Sell $${token?.symbol}`}
         </button>
-
-        {!disabled && (
-          <div className="text-xs text-white/30 space-y-1">
-            <div className="flex justify-between">
-              <span>滑点</span>
-              <span>1%</span>
-            </div>
-            <div className="flex justify-between">
-              <span>池子费率</span>
-              <span>—</span>
-            </div>
-          </div>
-        )}
+        <div className="flex justify-between text-[11px] text-shield-muted">
+          <span>0% platform fee · only Solana network fee</span>
+          <span className="text-amber-600 font-bold">Slip 30%</span>
+        </div>
       </div>
 
-      {token && (
-        <div className="p-4 border-t border-white/10 text-xs text-white/40 space-y-1.5">
-          <div className="text-white/70 font-bold text-sm mb-2">代币信息</div>
-          <div className="flex justify-between">
-            <span>Mint</span>
-            <span className="font-mono">
-              {token.mint.slice(0, 4)}…{token.mint.slice(-4)}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span>市值</span>
-            <span>${token.mcapUsd.toLocaleString()}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>毕业进度</span>
-            <span className="text-shield-neon">{token.progressPct.toFixed(1)}%</span>
-          </div>
+      <div className="px-4 py-3 border-t border-shield-line">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-sm font-extrabold">Traders to follow</span>
+          <span className="text-xs text-shield-primary font-bold">See all</span>
         </div>
-      )}
+        <p className="text-xs text-shield-muted">
+          {token ? "跟单大神还没出现" : "People who trade on ShieldLaunch show up here to follow."}
+        </p>
+      </div>
     </div>
   );
 }

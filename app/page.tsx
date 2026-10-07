@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { WalletButton } from "@/components/WalletButton";
+import TopNav from "@/components/TopNav";
+import StatusBar from "@/components/StatusBar";
 import TokenList, { type ListedToken } from "@/components/TokenList";
 import TradingPanel from "@/components/TradingPanel";
 
@@ -15,112 +16,104 @@ export default function Home() {
 
   return (
     <main className="h-screen flex flex-col bg-shield-bg">
-      {/* 顶栏 */}
-      <nav className="flex items-center gap-4 px-4 py-3 border-b border-white/10 shrink-0">
-        <Link href="/" className="text-xl font-bold text-shield-neon shrink-0">
-          🛡️ ShieldLaunch
-        </Link>
-        <div className="flex-1 max-w-md">
-          <input
-            placeholder="搜索代币 / mint 地址…"
-            className="w-full bg-shield-panel border border-white/10 rounded-lg px-4 py-2 text-sm outline-none focus:border-shield-neon placeholder:text-white/25"
-          />
-        </div>
-        <div className="flex-1" />
-        <Link
-          href="/launch"
-          className="text-sm font-bold bg-shield-neon text-black px-4 py-2 rounded-lg hover:opacity-90 shrink-0"
-        >
-          ＋ 发币
-        </Link>
-        <WalletButton />
-      </nav>
+      <TopNav />
 
-      {/* 三栏终端 */}
-      <div className="flex-1 flex min-h-0">
-        {/* 左：代币列表 */}
-        <aside className="w-72 shrink-0 border-r border-white/10 bg-shield-panel/50 hidden md:flex flex-col">
+      <div className="flex-1 flex min-h-0 gap-3 p-3">
+        {/* 左：Markets */}
+        <aside className="w-64 shrink-0 rounded-2xl border border-shield-line overflow-hidden hidden md:flex flex-col">
           <TokenList tokens={TOKENS} selected={selectedMint} onSelect={setSelectedMint} />
         </aside>
 
-        {/* 中：代币详情 */}
-        <section className="flex-1 min-w-0 flex flex-col">
+        {/* 中：图表区 */}
+        <section className="flex-1 min-w-0 rounded-2xl bg-white border border-shield-line flex flex-col overflow-hidden">
           {selected ? (
             <>
-              <div className="px-6 py-4 border-b border-white/10">
+              <div className="px-5 py-4 border-b border-shield-line">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-shield-panel border border-white/10 flex items-center justify-center text-2xl">
+                  <div className="w-11 h-11 rounded-2xl bg-shield-bg border border-shield-line flex items-center justify-center text-2xl">
                     🪙
                   </div>
                   <div>
-                    <div className="font-bold text-lg">
-                      {selected.name}{" "}
-                      <span className="text-white/40 text-sm">${selected.symbol}</span>
+                    <div className="font-extrabold text-lg text-shield-ink">
+                      ${selected.symbol}
+                      <span className="ml-2 text-xs font-bold text-shield-muted">
+                        {selected.name}
+                      </span>
                     </div>
-                    <div className="text-xs text-white/40 font-mono">
+                    <div className="text-xs text-shield-muted font-mono">
                       {selected.mint.slice(0, 6)}…{selected.mint.slice(-6)}
                     </div>
                   </div>
                   <div className="flex-1" />
                   <div className="text-right">
-                    <div className="text-xl font-mono font-bold">
-                      {selected.priceSol.toFixed(6)} SOL
-                    </div>
-                    <div
-                      className={`text-sm ${selected.change24h >= 0 ? "text-shield-neon" : "text-red-400"}`}
-                    >
-                      {selected.change24h >= 0 ? "+" : ""}
-                      {selected.change24h.toFixed(2)}%
-                    </div>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-50 text-shield-primary border border-blue-100">
+                      SOL · Meteora bonding curve
+                    </span>
                   </div>
                 </div>
                 <div className="flex gap-6 mt-3 text-sm">
-                  {[
-                    ["市值", `$${selected.mcapUsd.toLocaleString()}`],
-                    ["毕业进度", `${selected.progressPct.toFixed(1)}%`],
-                  ].map(([k, v]) => (
-                    <div key={k}>
-                      <span className="text-white/35 text-xs">{k} </span>
-                      <span className="font-mono">{v}</span>
+                  <div>
+                    <div className="text-[11px] text-shield-muted">Price</div>
+                    <div className="font-mono font-bold">
+                      {selected.priceSol.toFixed(6)} SOL
                     </div>
-                  ))}
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-shield-muted">Market cap</div>
+                    <div className="font-mono font-bold">
+                      ${(selected.mcapUsd / 1000).toFixed(1)}K
+                      <span
+                        className={`ml-1 text-xs ${selected.change24h >= 0 ? "text-green-600" : "text-red-500"}`}
+                      >
+                        {selected.change24h >= 0 ? "+" : ""}
+                        {selected.change24h.toFixed(2)}%
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-shield-muted">毕业进度</div>
+                    <div className="font-mono font-bold text-shield-primary">
+                      {selected.progressPct.toFixed(1)}%
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="flex-1 flex items-center justify-center text-white/25 text-sm">
-                K 线图接 DexScreener/GMGN（首币发射后接入）
+              <div className="flex-1 flex items-center justify-center text-shield-muted text-sm">
+                K 线图（首币发射后接入）
               </div>
             </>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-              <div className="text-5xl mb-4">🛡️</div>
-              <h1 className="text-2xl font-bold mb-2">
-                在 Solana 上<span className="text-shield-neon">发射</span>你的 Meme
-              </h1>
-              <p className="text-white/50 text-sm mb-6 max-w-md">
+              <div className="bg-shield-bg rounded-2xl px-10 py-8">
+                <div className="text-4xl mb-3">🛡️</div>
+                <div className="font-extrabold text-lg mb-4">还没有代币上线</div>
+                <Link
+                  href="/launch"
+                  className="inline-block bg-shield-primary text-white font-extrabold px-6 py-2.5 rounded-full hover:bg-shield-primaryDark"
+                >
+                  🚀 Launch the first coin
+                </Link>
+              </div>
+              <p className="mt-4 text-xs text-shield-muted max-w-sm">
                 Meteora 动态联合曲线 · $5K 开盘 → $15K 毕业迁移 DAMM v2 ·
                 毕业后 LP 永久锁定 · 发币人分成 0–9% 自选
               </p>
-              <Link
-                href="/launch"
-                className="bg-shield-neon text-black font-bold px-8 py-3.5 rounded-xl hover:opacity-90"
-              >
-                立即发币 →
-              </Link>
-              <p className="mt-4 text-xs text-white/25">主网模式 · 真实 SOL</p>
             </div>
           )}
         </section>
 
         {/* 右：交易面板 */}
-        <aside className="w-80 shrink-0 border-l border-white/10 bg-shield-panel/50 hidden lg:block">
+        <aside className="w-80 shrink-0 rounded-2xl border border-shield-line overflow-hidden hidden lg:block">
           <TradingPanel token={selected} />
         </aside>
       </div>
 
-      {/* 移动端：列表抽屉简化 */}
-      <div className="md:hidden border-t border-white/10 max-h-48 overflow-y-auto">
+      {/* 移动端列表 */}
+      <div className="md:hidden mx-3 mb-3 rounded-2xl border border-shield-line overflow-hidden max-h-56">
         <TokenList tokens={TOKENS} selected={selectedMint} onSelect={setSelectedMint} />
       </div>
+
+      <StatusBar />
     </main>
   );
 }
